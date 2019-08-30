@@ -1,29 +1,23 @@
 package com.assignment.myresume
 
-import android.app.Activity
 import android.app.Application
+import com.assignment.myresume.di.ApiModule
+import com.assignment.myresume.di.AppComponent
+import com.assignment.myresume.di.AppModule
 import com.assignment.myresume.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import javax.inject.Inject
 
-class MyResumeApplication : Application(), HasActivityInjector {
+class MyResumeApplication : Application() {
 
-    @Inject
-    lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    companion object {
+        lateinit var appComponent: AppComponent
+    }
 
     override fun onCreate() {
         super.onCreate()
         // Initialize Dagger
-        DaggerAppComponent
-            .builder()
-            .application(this)
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .apiModule(ApiModule())
             .build()
-            .inject(this)
-    }
-
-    override fun activityInjector(): AndroidInjector<Activity> {
-        return activityDispatchingAndroidInjector
     }
 }

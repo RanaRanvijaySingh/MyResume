@@ -35,6 +35,8 @@ ext {
     materialVersion = '1.0.0'
     testRunnerVersion = '1.2.0'
     espressoVersion = '3.2.0'
+    rxAndroidVersion = '2.1.1'
+    rxJavaVersion = '2.2.6'
 }
 
 dependencies {
@@ -56,6 +58,7 @@ dependencies {
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$loggingVersion"
 
     // Dagger
@@ -63,4 +66,9 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+
+    // RX
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 }
