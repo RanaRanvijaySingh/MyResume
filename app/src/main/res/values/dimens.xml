@@ -1,0 +1,38 @@
+<resources>
+    <!--Margin-->
+    <dimen name="margin_xxx_large">42dp</dimen>
+    <dimen name="margin_xx_large">30dp</dimen>
+    <dimen name="margin_x_large">24dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_x_small">8dp</dimen>
+    <dimen name="margin_xx_small">4dp</dimen>
+    <dimen name="margin_xxx_small">2dp</dimen>
+
+    <!--Padding-->
+    <dimen name="padding_xxx_large">42dp</dimen>
+    <dimen name="padding_xx_large">30dp</dimen>
+    <dimen name="padding_x_large">24dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="padding_small">12dp</dimen>
+    <dimen name="padding_x_small">8dp</dimen>
+    <dimen name="padding_xx_small">4dp</dimen>
+    <dimen name="padding_xxx_small">2dp</dimen>
+
+    <!--Text sizes-->
+    <dimen name="text_size_xxx_large">42sp</dimen>
+    <dimen name="text_size_xx_large">30sp</dimen>
+    <dimen name="text_size_x_large">24sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_default">16sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_x_small">8sp</dimen>
+    <dimen name="text_size_xx_small">4sp</dimen>
+    <dimen name="text_size_xxx_small">2sp</dimen>
+
+    <dimen name="chip_radius_default">5sp</dimen>
+    <dimen name="chip_radius_large">10sp</dimen>
+    <dimen name="elevation_default">5dp</dimen>
+</resources>
