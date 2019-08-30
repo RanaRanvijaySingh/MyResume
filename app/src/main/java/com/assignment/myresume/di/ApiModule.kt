@@ -1,19 +1,22 @@
 package com.assignment.myresume.di
 
+import com.assignment.myresume.BuildConfig
 import com.assignment.myresume.MyResumeApplication
+import com.assignment.myresume.utils.Constants
 import com.google.gson.FieldNamingPolicy
 import dagger.Provides
 import retrofit2.Retrofit
 import com.google.gson.GsonBuilder
 import com.google.gson.Gson
+import dagger.Module
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-class ApiModule(
-    private val baseUrl: String
-) {
+@Module
+class ApiModule {
 
     @Provides
     @Singleton
@@ -29,24 +32,30 @@ class ApiModule(
         return GsonBuilder().apply {
             setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         }.create()
-
     }
 
     @Provides
     @Singleton
-    fun provideOkHttp(cache: Cache): OkHttpClient {
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttp(cache: Cache, loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder().apply {
             cache(cache)
+            if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor)
         }.build()
     }
 
     @Provides
     @Singleton
-    fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(gson: Gson, client: OkHttpClient): Retrofit {
         return Retrofit.Builder().apply {
-            baseUrl(baseUrl)
+            baseUrl(Constants.BASE_URL)
             addConverterFactory(GsonConverterFactory.create(gson))
-            client(okHttpClient)
+            client(client)
         }.build()
     }
 }

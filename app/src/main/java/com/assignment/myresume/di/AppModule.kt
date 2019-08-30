@@ -1,5 +1,7 @@
 package com.assignment.myresume.di
 
+import android.app.Application
+import android.content.Context
 import com.assignment.myresume.MyResumeApplication
 import dagger.Module
 import dagger.Provides
@@ -10,9 +12,9 @@ class AppModule(
     private val application: MyResumeApplication
 ) {
 
-    @Provides
+   /* @Provides
     @Singleton
-    fun provideApplication(): MyResumeApplication {
+    internal fun provideContext(application: Application): Context {
         return application
-    }
+    }*/
 }
