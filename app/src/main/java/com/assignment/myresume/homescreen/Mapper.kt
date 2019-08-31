@@ -1,8 +1,5 @@
-package com.assignment.myresume.home.domain
+package com.assignment.myresume.homescreen
 
-import com.assignment.myresume.home.ui.CompanyUi
-import com.assignment.myresume.home.ui.EducationSummaryUi
-import com.assignment.myresume.home.ui.ResumeUi
 import com.assignment.myresume.utils.DateTimeUtils
 import javax.inject.Inject
 

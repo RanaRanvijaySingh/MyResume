@@ -1,7 +1,7 @@
 package com.assignment.myresume
 
-import com.assignment.myresume.home.domain.Resume
-import com.assignment.myresume.home.ui.ResumeUi
+import com.assignment.myresume.homescreen.Resume
+import com.assignment.myresume.homescreen.ResumeUi
 import com.google.gson.GsonBuilder
 
 /**

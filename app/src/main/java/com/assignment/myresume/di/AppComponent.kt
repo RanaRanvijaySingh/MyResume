@@ -1,6 +1,6 @@
 package com.assignment.myresume.di
 
-import com.assignment.myresume.home.ui.HomeActivity
+import com.assignment.myresume.homescreen.HomeActivity
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.rx.RxModule
 import dagger.Component

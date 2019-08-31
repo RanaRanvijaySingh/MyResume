@@ -1,8 +1,6 @@
-package com.assignment.myresume.home.domain
+package com.assignment.myresume.homescreen
 
 import com.assignment.myresume.base.UseCase
-import com.assignment.myresume.home.data.ResumeRepository
-import com.assignment.myresume.home.ui.ResumeUi
 import com.assignment.myresume.rx.IoThreadScheduler
 import com.assignment.myresume.rx.MainThreadScheduler
 import com.assignment.myresume.rx.SchedulerProvider

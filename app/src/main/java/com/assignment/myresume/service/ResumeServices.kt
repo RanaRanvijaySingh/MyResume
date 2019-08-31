@@ -1,6 +1,6 @@
 package com.assignment.myresume.service
 
-import com.assignment.myresume.home.domain.Resume
+import com.assignment.myresume.homescreen.Resume
 import io.reactivex.Flowable
 import retrofit2.http.GET
 

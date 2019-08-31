@@ -1,4 +1,4 @@
-package com.assignment.myresume.home.ui
+package com.assignment.myresume.homescreen
 
 import android.view.LayoutInflater
 import android.view.View

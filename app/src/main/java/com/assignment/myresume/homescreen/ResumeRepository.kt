@@ -1,6 +1,5 @@
-package com.assignment.myresume.home.data
+package com.assignment.myresume.homescreen
 
-import com.assignment.myresume.home.domain.Resume
 import com.assignment.myresume.service.ResumeService
 import io.reactivex.Flowable
 import javax.inject.Inject

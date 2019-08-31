@@ -1,8 +1,7 @@
-package com.assignment.myresume.home.ui
+package com.assignment.myresume.homescreen
 
 import androidx.lifecycle.MutableLiveData
 import com.assignment.myresume.base.BaseViewModelImpl
-import com.assignment.myresume.home.domain.GetResumeUseCase
 import com.assignment.myresume.utils.Constants
 import com.assignment.myresume.utils.NetworkUtils
 import io.reactivex.disposables.CompositeDisposable

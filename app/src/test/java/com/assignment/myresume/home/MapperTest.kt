@@ -1,6 +1,7 @@
-package com.assignment.myresume.home.domain
+package com.assignment.myresume.home
 
 import com.assignment.myresume.TestObjects
+import com.assignment.myresume.homescreen.Mapper
 import com.assignment.myresume.utils.DateTimeUtils
 import com.google.gson.Gson
 import org.junit.Assert

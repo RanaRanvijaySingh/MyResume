@@ -1,4 +1,4 @@
-package com.assignment.myresume.home.ui
+package com.assignment.myresume.homescreen
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
-import com.assignment.myresume.home.domain.Company
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*

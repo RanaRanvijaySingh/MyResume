@@ -1,4 +1,4 @@
-package com.assignment.myresume.home.ui
+package com.assignment.myresume.homescreen
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
