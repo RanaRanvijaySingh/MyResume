@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".homescreen.companyscreen.CompanyActivity" />
+        <activity android:name=".homescreen.companyscreen.projectsscreen.ProjectsActivity" />
     </application>
 
 </manifest>

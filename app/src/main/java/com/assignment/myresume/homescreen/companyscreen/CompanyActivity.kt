@@ -1,6 +1,8 @@
 package com.assignment.myresume.homescreen.companyscreen
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -8,10 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
+import com.assignment.myresume.homescreen.companyscreen.projectsscreen.ProjectsActivity
 import com.assignment.myresume.utils.Constants
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_company.*
 import kotlinx.android.synthetic.main.view_progress.*
+import java.util.ArrayList
 import javax.inject.Inject
 
 
@@ -22,6 +26,7 @@ class CompanyActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CompanyViewModel
     private var companyDataUrl: String? = null
+    private var companyDetailUi: CompanyDetailUi? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +65,7 @@ class CompanyActivity : AppCompatActivity() {
      * Observer for company detail.
      */
     private val companyDetailObserver = Observer<CompanyDetailUi> { companyDetailUi ->
+        this.companyDetailUi = companyDetailUi
         setCompaniesDetail(companyDetailUi)
         setLogo(companyDetailUi.logo)
     }
@@ -104,6 +110,13 @@ class CompanyActivity : AppCompatActivity() {
     }
 
     fun onClickProjects(view: View) {
-
+        companyDetailUi?.let {
+            val intent = Intent(this, ProjectsActivity::class.java)
+            val bundle = Bundle()
+            bundle.putParcelableArrayList(Constants.IntentKeys.PROJECTS, it.projects as ArrayList<out Parcelable>)
+            bundle.putString(Constants.IntentKeys.COMPANY_NAME, it.name)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
     }
 }

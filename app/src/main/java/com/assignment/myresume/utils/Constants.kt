@@ -12,6 +12,8 @@ class Constants {
         companion object {
             const val COMPANY_DETAIL_URL = "company_detail_url"
             const val COMPANY_NAME = "company_name"
+            const val PROJECTS = "projects"
+            const val PROJECT = "project"
         }
     }
 
