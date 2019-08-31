@@ -22,3 +22,24 @@ data class Resume(
     @SerializedName("companies") @Expose val companies: List<Company>,
     @SerializedName("education_summary") @Expose val educationSummary: List<EducationSummary>
 )
+
+data class Company(
+    @SerializedName("id") @Expose val id: Int,
+    @SerializedName("name") @Expose val name: String,
+    @SerializedName("start_date") @Expose val startDate: Int,
+    @SerializedName("end_date") @Expose val endDate: Int,
+    @SerializedName("data") @Expose val data: String,
+    @SerializedName("logo") @Expose val logo: String,
+    @SerializedName("project_count") @Expose val projectCount: Int
+)
+
+class EducationSummary(
+    @SerializedName("id") @Expose val id: Int,
+    @SerializedName("name") @Expose val name: String,
+    @SerializedName("state") @Expose val state: String,
+    @SerializedName("country") @Expose val country: String,
+    @SerializedName("certificate") @Expose val certificate: String,
+    @SerializedName("grade") @Expose val grade: String,
+    @SerializedName("start_date") @Expose val startDate: Int,
+    @SerializedName("end_date") @Expose val endDate: Int
+)
