@@ -1,0 +1,122 @@
+{
+  "id": 1,
+  "name": "Webonise lab",
+  "start_date": 1370979604,
+  "end_date": 1478893204,
+  "logo": "https://media.glassdoor.com/sqll/532781/webonise-lab-squarelogo-1397159392536.png",
+  "designations": [
+    "Software Engineer",
+    "Sr. Software Engineer"
+  ],
+  "role": [
+    "Android Application design, development, and maintenance.",
+    "Developed UI and integrated REST API’s",
+    "Collaboration with cross-functional teams to gather requirements, design, develop and deliver,",
+    "Obtaining project requirements from the client, formulating the requirements, assigning tasks to team members, and tracking the progress.",
+    "Development of application from scratch.",
+    "Review and repair legacy code.",
+    "Learning new tech tools.",
+    "Creating POCs for the requested functionality.",
+    "Helping junior programmers.",
+    "Creating a demo application and conducting small sessions.",
+    "Involved in recruiting new talents."
+  ],
+  "projects": [
+    {
+      "name": "DataMapper InFlight for DJI",
+      "employer": "Webonise lab",
+      "technologies": "Android",
+      "operating_system": "Android 4.4 onwards",
+      "domain": "Tool for DJI Drone",
+      "application_link": "https://play.google.com/store/apps/details?id=com.precisionhawk.inflightmobile&hl=en",
+      "project_description": "Precision Hawk’s DataMapper InFlight mobile app turns a DJI drone into an advanced remote sensing tool that empowers businesses and consumers to gain actionable aerial data autonomously.",
+      "role_and_responsibilities": [
+        "Senior Developer",
+        "Research and Development (R&D)",
+        "Code Implementation and maintenance",
+        "Code reviews and optimization"
+      ]
+    },
+    {
+      "name": "See n Pick-Local Shopping App",
+      "employer": "Webonise lab",
+      "technologies": "Android",
+      "operating_system": "Android 4.4 onwards",
+      "domain": "E-Commerce",
+      "application_link": "https://play.google.com/store/apps/details?id=in.webtechasia.seenpick",
+      "project_description": "SeeNPick is e-commerce application based on a very simple idea to get looks present in areas around you. The main focus of this application is to get location and style together and help you shop better and faster.",
+      "role_and_responsibilities": [
+        "Senior Developer",
+        "Improving legacy code",
+        "Requirement gathering from client",
+        "Feature development",
+        "Code optimization"
+      ]
+    },
+    {
+      "name": "MicroSave",
+      "employer": "Webonise lab",
+      "technologies": "Android",
+      "operating_system": "Android 4.4 onwards",
+      "domain": "Education",
+      "application_link": "https://play.google.com/store/apps/details?id=com.microsave.app&hl=en",
+      "project_description": "MicroSave App provide a whole set of publication, videos, blogs and presentation published by more than 350 authors in over 13 countries.",
+      "role_and_responsibilities": [
+        "Role and Responsibilities in the project:",
+        "Application development from scratch",
+        "Requirement understanding and implementation",
+        "Presenting a demo to the client"
+      ]
+    },
+    {
+      "name": "Account Tracker",
+      "employer": "Webonise lab",
+      "technologies": "Android",
+      "operating_system": "Android 4.4 onwards",
+      "domain": "Finance",
+      "application_link": "https://play.google.com/store/apps/details?id=com.magpie.accounttracker",
+      "project_description": "This application is a platform to combine all your bank accounts and credit cards in one application. The user can view all details and transactions of the added accounts and credit cards.",
+      "role_and_responsibilities": [
+        "Role and Responsibilities in the project:",
+        "Application development from scratch",
+        "Research implementation of Yodlee banking APIs",
+        "Continuous interaction with Yodlee personal",
+        "Requirement understanding and implementation"
+      ]
+    },
+    {
+      "name": "USA Football (Teams App)",
+      "employer": "Webonise lab",
+      "technologies": "Android",
+      "operating_system": "Android 4.4 onwards",
+      "domain": "Sports",
+      "application_link": "https://play.google.com/store/apps/details?id=com.headsup",
+      "project_description": "Teams app is a platform for USA Football members to maintain their records along with other gaming schedules and injury reports.",
+      "role_and_responsibilities": [
+        "Role and Responsibilities in the project:",
+        "Application development from scratch",
+        "Creating demo application for new functionalities and implementing in the main project",
+        "Requirement understanding and implementation",
+        "Code renewal and maintenance",
+        "Working with senior on new functionalities",
+        "Presenting a demo to the client"
+      ]
+    },
+    {
+      "name": "Smarter Places (Touchpoint tagger)",
+      "employer": "Webonise lab",
+      "technologies": "Android",
+      "operating_system": "Android 4.4 onwards",
+      "domain": "Tool",
+      "application_link": "https://play.google.com/store/search?q=com.smarter_android&c=apps",
+      "project_description": "Smarter Places application was designed to provide different businesses with one touch point to advertise, get feedback or conduct a survey using NFC tags.",
+      "role_and_responsibilities": [
+        "Role and Responsibilities in the project:",
+        "Application development from scratch",
+        "Creating POC with NFC",
+        "Requirement understanding and implementation",
+        "Working with senior on new functionalities"
+      ]
+    }
+  ]
+}
