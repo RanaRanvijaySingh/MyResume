@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
 import com.assignment.myresume.home.domain.ResumeUi
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_progress.*
@@ -24,16 +25,16 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MyResumeApplication.appComponent.inject(this)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(HomeViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(HomeViewModel::class.java)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
         viewModel.resumeUiLiveData.observe(this, resumeObserver)
         viewModel.progressLiveData.observe(this, progressObserver)
         viewModel.retryOptionLiveData.observe(this, retryObserver)
     }
 
     private val resumeObserver = Observer<ResumeUi> { resumeUi ->
-        tvResponse.text = resumeUi.toString()
+        setProfile(resumeUi)
     }
 
     private val progressObserver = Observer<Boolean> { isProgressBarVisible ->
@@ -48,5 +49,17 @@ class HomeActivity : AppCompatActivity() {
         ).setAction(resources.getString(R.string.retry)) {
             viewModel.getResume()
         }.show()
+    }
+
+    private fun setProfile(resumeUi: ResumeUi) {
+        tvName.text = resumeUi.user
+        setProfileImage(resumeUi.image)
+    }
+
+    private fun setProfileImage(imageUrl: String) {
+        Glide.with(this)
+            .load(imageUrl)
+            .centerCrop()
+            .into(ivProfile)
     }
 }

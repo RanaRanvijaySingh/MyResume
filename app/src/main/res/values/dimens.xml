@@ -35,4 +35,5 @@
     <dimen name="chip_radius_default">5sp</dimen>
     <dimen name="chip_radius_large">10sp</dimen>
     <dimen name="elevation_default">5dp</dimen>
+    <dimen name="height_min_profile">250dp</dimen>
 </resources>
