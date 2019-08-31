@@ -1,4 +1,4 @@
-package com.assignment.myresume;
+package com.assignment.myresume.home.domain;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

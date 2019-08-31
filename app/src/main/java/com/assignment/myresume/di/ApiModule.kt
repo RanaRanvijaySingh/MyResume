@@ -2,6 +2,7 @@ package com.assignment.myresume.di
 
 import com.assignment.myresume.BuildConfig
 import com.assignment.myresume.MyResumeApplication
+import com.assignment.myresume.service.ResumeService
 import com.assignment.myresume.utils.Constants
 import com.google.gson.FieldNamingPolicy
 import dagger.Provides
@@ -64,5 +65,11 @@ class ApiModule {
             addConverterFactory(GsonConverterFactory.create(gson))
             client(client)
         }.build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideResumeApiService(retrofit: Retrofit): ResumeService {
+        return retrofit.create(ResumeService::class.java)
     }
 }

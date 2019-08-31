@@ -37,6 +37,7 @@ ext {
     espressoVersion = '3.2.0'
     rxAndroidVersion = '2.1.1'
     rxJavaVersion = '2.2.6'
+    lifecycleVersion = '2.0.0'
 }
 
 dependencies {
@@ -71,4 +72,8 @@ dependencies {
     // RX
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    // Live Data
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
 }
