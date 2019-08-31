@@ -39,6 +39,9 @@ ext {
     rxJavaVersion = '2.2.6'
     lifecycleVersion = '2.0.0'
     glideVersion = '4.9.0'
+    mockitoVersion = '2.8.47'
+    mockitoKotlinVersion = '2.1.0'
+    roboelectricVersion = '4.1'
 }
 
 dependencies {
@@ -56,6 +59,11 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$testRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    testImplementation "org.robolectric:robolectric:$roboelectricVersion"
+
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"

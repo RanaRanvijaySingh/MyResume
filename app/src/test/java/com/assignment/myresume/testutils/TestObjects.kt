@@ -1,4 +1,4 @@
-package com.assignment.myresume
+package com.assignment.myresume.testutils
 
 import com.assignment.myresume.homescreen.Resume
 import com.assignment.myresume.homescreen.ResumeUi
@@ -11,6 +11,7 @@ import com.google.gson.GsonBuilder
  */
 class TestObjects {
     companion object {
+        val companyUrl: String = "b03778260d79c4f0d9c31776a3b7d3f8/raw/b802f11336617452c9905408f130adc7ab2ade85/globant"
         val gson = GsonBuilder().create()
 
         val resume = gson.fromJson(

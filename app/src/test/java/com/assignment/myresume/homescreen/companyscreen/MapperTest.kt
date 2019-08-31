@@ -1,6 +1,6 @@
 package com.assignment.myresume.homescreen.companiesscreen
 
-import com.assignment.myresume.TestObjects
+import com.assignment.myresume.testutils.TestObjects
 import com.assignment.myresume.homescreen.companyscreen.Mapper
 import com.assignment.myresume.utils.DateTimeUtils
 import com.google.gson.Gson

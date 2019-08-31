@@ -1,4 +1,4 @@
-package com.assignment.myresume
+package com.assignment.myresume.testutils
 
 import java.io.BufferedReader
 import java.io.InputStream

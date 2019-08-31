@@ -1,6 +1,6 @@
 package com.assignment.myresume.homescreen
 
-import com.assignment.myresume.TestObjects
+import com.assignment.myresume.testutils.TestObjects
 import com.assignment.myresume.utils.DateTimeUtils
 import com.google.gson.Gson
 import org.junit.Assert
