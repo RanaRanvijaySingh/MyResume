@@ -10,5 +10,6 @@ class Constants {
 
     companion object {
         const val BASE_URL = "https://gist.githubusercontent.com/RanaRanvijaySingh/"
+        const val INVALID_REQUEST = "Invalid request"
     }
 }
