@@ -3,7 +3,7 @@ package com.assignment.myresume.home.domain
 data class ResumeUi(
     val user: String,
     val image: String,
-    val number: Int,
+    val number: Long,
     val email: String,
     val careerSummary: List<String>,
     val projectManagementTools: List<String>,

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class Resume(
     @SerializedName("user") @Expose val user: String,
     @SerializedName("image") @Expose val image: String,
-    @SerializedName("number") @Expose val number: Int,
+    @SerializedName("number") @Expose val number: Long,
     @SerializedName("email") @Expose val email: String,
     @SerializedName("career_summary") @Expose val careerSummary: List<String>,
     @SerializedName("project_management_tools") @Expose val projectManagementTools: List<String>,

@@ -51,7 +51,7 @@ class ApiModule {
     @Singleton
     fun provideOkHttp(cache: Cache, loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder().apply {
-            cache(cache)
+//            cache(cache)
             if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor)
         }.build()
     }
