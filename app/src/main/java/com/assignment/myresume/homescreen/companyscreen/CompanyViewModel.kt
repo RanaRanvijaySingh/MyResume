@@ -1,4 +1,4 @@
-package com.assignment.myresume.homescreen.companiesscreen
+package com.assignment.myresume.homescreen.companyscreen
 
 import androidx.lifecycle.MutableLiveData
 import com.assignment.myresume.base.BaseViewModelImpl
@@ -12,23 +12,19 @@ class CompanyViewModel @Inject constructor(
     private val networkUtils: NetworkUtils,
     private val useCase: GetCompanyUseCase
 ) : BaseViewModelImpl(compositeDisposable) {
-    val companyDetailUi = MutableLiveData<CompanyDetailUi>()
+    val companyDetailLiveData = MutableLiveData<CompanyDetailUi>()
     val progressLiveData = MutableLiveData<Boolean>()
     val retryOptionLiveData = MutableLiveData<String>()
 
-    init {
-        getCompanyDetail()
-    }
-
-    fun getCompanyDetail() {
+    fun getCompanyDetail(companyDetailUrl: String) {
         if (!networkUtils.isNetworkAvailable()) {
             retryOptionLiveData.value = Constants.Messages.NO_INTERNET
             return
         }
         progressLiveData.value = true
-        manageActionDisposables(useCase.execute(null).subscribe({
+        manageActionDisposables(useCase.execute(companyDetailUrl).subscribe({
             progressLiveData.value = false
-            companyDetailUi.value = it
+            companyDetailLiveData.value = it
         }, { error ->
             progressLiveData.value = false
             retryOptionLiveData.value = Constants.Messages.UNABLE_TO_FETCH_DATA

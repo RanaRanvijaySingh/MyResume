@@ -2,8 +2,8 @@ package com.assignment.myresume
 
 import com.assignment.myresume.homescreen.Resume
 import com.assignment.myresume.homescreen.ResumeUi
-import com.assignment.myresume.homescreen.companiesscreen.CompanyDetail
-import com.assignment.myresume.homescreen.companiesscreen.CompanyDetailUi
+import com.assignment.myresume.homescreen.companyscreen.CompanyDetail
+import com.assignment.myresume.homescreen.companyscreen.CompanyDetailUi
 import com.google.gson.GsonBuilder
 
 /**

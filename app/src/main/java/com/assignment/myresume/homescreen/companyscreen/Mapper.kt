@@ -1,4 +1,4 @@
-package com.assignment.myresume.homescreen.companiesscreen
+package com.assignment.myresume.homescreen.companyscreen
 
 import com.assignment.myresume.utils.DateTimeUtils
 import javax.inject.Inject

@@ -8,6 +8,13 @@ class Constants {
         }
     }
 
+    class IntentKeys {
+        companion object {
+            const val COMPANY_DETAIL_URL = "company_detail_url"
+            const val COMPANY_NAME = "company_name"
+        }
+    }
+
     companion object {
         const val BASE_URL = "https://gist.githubusercontent.com/RanaRanvijaySingh/"
         const val INVALID_REQUEST = "Invalid request"

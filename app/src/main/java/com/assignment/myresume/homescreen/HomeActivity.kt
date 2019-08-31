@@ -1,5 +1,6 @@
 package com.assignment.myresume.homescreen
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
+import com.assignment.myresume.homescreen.companyscreen.CompanyActivity
+import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
@@ -105,6 +108,9 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
      * Call back from companies adapter class when a company is selected.
      */
     override fun companySelected(company: CompanyUi) {
-
+        val intent = Intent(this, CompanyActivity::class.java)
+        intent.putExtra(Constants.IntentKeys.COMPANY_DETAIL_URL, company.data)
+        intent.putExtra(Constants.IntentKeys.COMPANY_NAME, company.name)
+        startActivity(intent)
     }
 }

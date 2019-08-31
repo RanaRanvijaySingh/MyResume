@@ -1,0 +1,109 @@
+package com.assignment.myresume.homescreen.companyscreen
+
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import com.assignment.myresume.MyResumeApplication
+import com.assignment.myresume.R
+import com.assignment.myresume.utils.Constants
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_company.*
+import kotlinx.android.synthetic.main.view_progress.*
+import javax.inject.Inject
+
+
+class CompanyActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private lateinit var viewModel: CompanyViewModel
+    private var companyDataUrl: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Dagger injection
+        MyResumeApplication.appComponent.inject(this)
+
+        // Attach view model
+        viewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(CompanyViewModel::class.java)
+        setContentView(R.layout.activity_company)
+
+        // Get company detail data url from intent
+        companyDataUrl = intent.getStringExtra(Constants.IntentKeys.COMPANY_DETAIL_URL)
+        val companyName = intent.getStringExtra(Constants.IntentKeys.COMPANY_NAME)
+
+        initToolbar(companyName)
+        // Attach all observer with view model
+        viewModel.companyDetailLiveData.observe(this, companyDetailObserver)
+        viewModel.progressLiveData.observe(this, progressObserver)
+        viewModel.retryOptionLiveData.observe(this, retryObserver)
+
+        // Initiate call for company detail
+        companyDataUrl?.let { viewModel.getCompanyDetail(it) }
+    }
+
+    private fun initToolbar(companyName: String?) {
+        companyName?.let { toolbar.title = it }
+        setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
+    }
+
+    /**
+     * Observer for company detail.
+     */
+    private val companyDetailObserver = Observer<CompanyDetailUi> { companyDetailUi ->
+        setCompaniesDetail(companyDetailUi)
+        setLogo(companyDetailUi.logo)
+    }
+
+    /**
+     * Observer for progress bar. To show if the api call is ongoing or completed.
+     */
+    private val progressObserver = Observer<Boolean> { isProgressBarVisible ->
+        rlProgress?.let {
+            it.visibility = if (isProgressBarVisible) View.VISIBLE else View.GONE
+        }
+    }
+
+    /**
+     * Observer for network connection and failed api response.
+     */
+    private val retryObserver = Observer<String> { message ->
+        Snackbar.make(
+            findViewById(android.R.id.content),
+            message,
+            Snackbar.LENGTH_INDEFINITE
+        ).setAction(resources.getString(R.string.retry)) {
+            companyDataUrl?.let { viewModel.getCompanyDetail(it) }
+        }.show()
+    }
+
+    /**
+     * Function to set companies details.
+     */
+    private fun setCompaniesDetail(companyDetailUi: CompanyDetailUi) {
+
+    }
+
+    /**
+     * Function to set the profile image
+     */
+    private fun setLogo(imageUrl: String) {
+        /*Glide.with(this)
+            .load(imageUrl)
+            .centerCrop()
+            .into(ivProfile)*/
+    }
+
+    fun onClickProjects(view: View) {
+
+    }
+}
