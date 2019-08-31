@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_home">
+
+    <TextView
+        android:id="@+id/tvQualificationSummaryTitle"
+        style="@style/textStyleTitle"
+        android:text="@string/summary_of_qualifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvCareerSummary" />
+
+    <TextView
+        android:id="@+id/tvProjectManagementToolsTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/project_management_tools"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvQualificationSummaryTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProjectManagementTools"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProjectManagementToolsTitle">
+
+        <TextView
+            android:id="@+id/tvProjectManagementTools"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTestingTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/ui_testing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvProjectManagementTools" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTestingTools"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTestingTitle">
+
+        <TextView
+            android:id="@+id/tvTestingTools"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvDatabasesTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/databases"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvTestingTools" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDatabases"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDatabasesTitle">
+
+        <TextView
+            android:id="@+id/tvDatabases"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvOsTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/operating_system"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvDatabases" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOs"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOsTitle">
+
+        <TextView
+            android:id="@+id/tvOs"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvProgrammingLanguageTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/programming_language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvOs" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProgrammingLanguage"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProgrammingLanguageTitle">
+
+        <TextView
+            android:id="@+id/tvProgrammingLanguage"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvScmToolTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/scm_tools"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvProgrammingLanguage" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvScmTool"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScmToolTitle">
+
+        <TextView
+            android:id="@+id/tvScmTool"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvApiToolTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/api_tools"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvScmTool" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvApiTool"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvApiToolTitle">
+
+        <TextView
+            android:id="@+id/tvApiTool"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvDevopsToolTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/devops_tools"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvApiTool" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDevopsTool"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDevopsToolTitle">
+
+        <TextView
+            android:id="@+id/tvDevopsTool"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvLanguagesTitle"
+        style="@style/testStyleSubtitle"
+        android:text="@string/languages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvDevopsTool" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvLanguages"
+        style="@style/cardStyleDefault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLanguagesTitle">
+
+        <TextView
+            android:id="@+id/tvLanguages"
+            style="@style/textStyleContent"
+            tools:text="This is a dummy text" />
+    </androidx.cardview.widget.CardView>
+</merge>

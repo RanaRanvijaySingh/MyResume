@@ -4,4 +4,16 @@
     <string name="retry">Retry</string>
     <string name="unable_to_fetch_data">Unable to fetch data</string>
     <string name="projects">projects</string>
+    <string name="carrier_summary">Carrier Summary</string>
+    <string name="summary_of_qualifications">Summary of Qualifications</string>
+    <string name="project_management_tools">Project management tools</string>
+    <string name="ui_testing">Unit / UI Test Tools</string>
+    <string name="databases">databases</string>
+    <string name="operating_system">Operating System</string>
+    <string name="programming_language">Programming languages</string>
+    <string name="devops_tools">Devops tools</string>
+    <string name="api_tools">Api tools</string>
+    <string name="scm_tools">Scm Tools</string>
+    <string name="languages">Speak Languages</string>
+    <string name="summary_of_skills">SUmmary of skills</string>
 </resources>

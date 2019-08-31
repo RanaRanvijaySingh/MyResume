@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.assignment.myresume.MyResumeApplication
@@ -16,7 +17,10 @@ import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.view_carrier_summary.*
+import kotlinx.android.synthetic.main.view_profile.*
 import kotlinx.android.synthetic.main.view_progress.*
+import kotlinx.android.synthetic.main.view_qualifications_summary.*
 import javax.inject.Inject
 
 class HomeActivity : AppCompatActivity(), CompanySelectListener {
@@ -26,6 +30,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var companiesAdapter: CompaniesAdapter
+    private lateinit var skillsAdapter: SkillsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +52,17 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
     private val resumeObserver = Observer<ResumeUi> { resumeUi ->
         setProfile(resumeUi)
         setCompanies(resumeUi.companies)
+        setSkills(resumeUi.skillSummary)
+        tvCareerSummary.text = resumeUi.careerSummary
+        tvProjectManagementTools.text = resumeUi.projectManagementTools
+        tvTestingTools.text = resumeUi.unitUiTestTools
+        tvDatabases.text = resumeUi.databases
+        tvOs.text = resumeUi.operatingSystem
+        tvProgrammingLanguage.text = resumeUi.programmingLanguages
+        tvScmTool.text = resumeUi.scmTool
+        tvApiTool.text = resumeUi.apiTool
+        tvDevopsTool.text = resumeUi.devopsTools
+        tvLanguages.text = resumeUi.languages
     }
 
     /**
@@ -102,6 +118,20 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
             adapter = companiesAdapter
         }
         companiesAdapter.setList(companies)
+    }
+
+    /**
+     * Function to set skill list
+     */
+    private fun setSkills(skills: List<String>) {
+        skillsAdapter = SkillsAdapter()
+        val layoutManager = GridLayoutManager(this, 3)
+        rvCompanies.apply {
+            setHasFixedSize(true)
+            setLayoutManager(layoutManager)
+            adapter = skillsAdapter
+        }
+        skillsAdapter.setList(skills)
     }
 
     /**

@@ -49,4 +49,11 @@ class MapperTest {
         val expectedObject = TestObjects.resumeUi.languages
         Assert.assertEquals(expectedObject, actualObject)
     }
+
+    @Test
+    fun test_listAppearance() {
+        val actualObject = mapper.getListAppearance(listOf<String>("hello", "hi","how"))
+        val expectedObject = "- hello\n- hi\n- how\n"
+        Assert.assertEquals(expectedObject, actualObject)
+    }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_home">
+
+
+    <TextView
+        android:id="@+id/tvCareerSummaryTitle"
+        android:text="@string/carrier_summary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile"
+        style="@style/textStyleTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCareerSummary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCareerSummaryTitle"
+        style="@style/cardStyleDefault">
+
+        <TextView
+            android:id="@+id/tvCareerSummary"
+            tools:text="This is a dummy text"
+            style="@style/textStyleContent" />
+    </androidx.cardview.widget.CardView>
+</merge>
