@@ -1,5 +1,7 @@
 package com.assignment.myresume.di
 
+import android.content.Context
+import android.net.ConnectivityManager
 import com.assignment.myresume.BuildConfig
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.service.ResumeService
@@ -19,6 +21,13 @@ import javax.inject.Singleton
 
 @Module
 class ApiModule {
+
+    @Provides
+    @Singleton
+    fun provideConnectivityManager(application: MyResumeApplication): ConnectivityManager {
+        return application.applicationContext
+            .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    }
 
     @Provides
     @Singleton
@@ -51,7 +60,7 @@ class ApiModule {
     @Singleton
     fun provideOkHttp(cache: Cache, loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder().apply {
-//            cache(cache)
+            cache(cache)
             if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor)
         }.build()
     }
