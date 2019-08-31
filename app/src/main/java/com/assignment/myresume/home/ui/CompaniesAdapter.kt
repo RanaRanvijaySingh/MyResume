@@ -6,13 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.assignment.myresume.R
-import com.assignment.myresume.home.domain.Company
 
 class CompaniesAdapter(
     private val listener: CompanySelectListener
 ) : RecyclerView.Adapter<CompanyViewHolder>() {
 
-    private var list = ArrayList<Company>()
+    private var list = ArrayList<CompanyUi>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CompanyViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -25,24 +24,29 @@ class CompaniesAdapter(
     }
 
     override fun onBindViewHolder(holder: CompanyViewHolder, position: Int) {
-        val company: Company = list.get(position)
+        val company: CompanyUi = list.get(position)
         holder.company = company
         holder.tvCompany?.text = company.name
     }
 
-    fun setList(list: List<Company>) {
-        this.list = list as ArrayList<Company>
+    /**
+     * Set the list of companies and refresh the list.
+     */
+    fun setList(list: List<CompanyUi>) {
+        this.list = list as ArrayList<CompanyUi>
         notifyDataSetChanged()
     }
 }
 
-
+/**
+ * View holder for company list item
+ */
 class CompanyViewHolder(
     itemView: View,
     private val listener: CompanySelectListener
 ) : RecyclerView.ViewHolder(itemView) {
 
-    lateinit var company: Company
+    lateinit var company: CompanyUi
     var tvCompany: TextView? = null
 
     init {
@@ -53,6 +57,9 @@ class CompanyViewHolder(
     }
 }
 
+/**
+ * Interface for getting selected company back to calling class.
+ */
 interface CompanySelectListener {
-    fun companySelected(company: Company)
+    fun companySelected(company: CompanyUi)
 }

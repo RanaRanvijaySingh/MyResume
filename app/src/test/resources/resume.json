@@ -1,0 +1,177 @@
+{
+  "user": "Rana Ranvijay Singh",
+  "image": "https://avatars0.githubusercontent.com/u/4836122?s=460&v=4",
+  "number": 9921237115,
+  "email": "ranaranvijaysingh9@gmail.com",
+  "career_summary": [
+    "A software professional with around 6 years of experience in Software Development of Mobile application in the areas of Android.",
+    "Extensive hands-on development experience using Java.",
+    "Dedicated to continuously discovering, and implementing new technologies.",
+    "Proficient in OOP concepts, Agile methodologies & best coding standards",
+    "Collaborate with cross-functional teams to define, design and develop a product",
+    "Have basic training in iOS application development using Swift.",
+    "Working knowledge of Online Project management tools like Pivotal Tracker, Basecamp, JIRA, Trello.",
+    "Working knowledge on SCM tool like Github, Bitbucket, GitLab.",
+    "Hands-on experience in writing unit and UI test cases using JUnit and Espresso(Android) with design pattern like MVC, MVP, MVP-MVVM, CLEAN Architecture.",
+    "Proactive, positive minded, quick learner and highly passionate towards the mobile domain.",
+    "Active contributor to open source community like StackOverflow (Repo: 3847), superuser and google doc."
+  ],
+  "project_management_tools": [
+    "Pivotal Tracker",
+    "JIRA",
+    "Trello",
+    "Confluence",
+    "Basecamp"
+  ],
+  "unit_ui_test_tools": [
+    "JUnit",
+    "Mockito",
+    "Espresso",
+    "Appium"
+  ],
+  "Databases": [
+    "SQLite",
+    "MySQL"
+  ],
+  "operating_system": [
+    "Windows",
+    "Linux",
+    "Mac OS"
+  ],
+  "programming_languages": [
+    "Core Java",
+    "Kotlin",
+    "Python",
+    "C",
+    "C++",
+    "Swift",
+    "Ruby",
+    "Groovy"
+  ],
+  "scm_tool": [
+    "Github",
+    "BitBucket",
+    "Gitlab"
+  ],
+  "api_tool": [
+    "Rest client",
+    "Postman"
+  ],
+  "devops_tools": [
+    "Jenkins ",
+    "Fastlane"
+  ],
+  "languages": [
+    "English ",
+    "Hindi"
+  ],
+  "skill_summary": [
+    "Android",
+    "Core Java",
+    "Material Design",
+    "Architectural & Design Patterns",
+    "SOLID",
+    "Agile Methodologies ",
+    "Lambda Expressions ",
+    "Multithreading",
+    "Rx-Android/Java ",
+    "Beacons",
+    "Location Services ",
+    "REST",
+    "Google Maps I",
+    "Google OAuth 2.0",
+    "G/FCM",
+    "Localisation ",
+    "TDD",
+    "Gradle",
+    "Git Flow",
+    "Multiple device support",
+    "Geofencing",
+    "JIRA",
+    " Confluence",
+    "JUnit",
+    "Mockito ",
+    "Git/Bitbucket/GitLab",
+    "Facebook API ",
+    "NFC",
+    "Retrofit Library ",
+    "Realm",
+    "Volley Library",
+    "Greendao ORM ",
+    "Admobs",
+    "Mixpanel Analytics",
+    "Firebase Analytics ",
+    "Crashlytics",
+    "Kotlin",
+    "Google Assistance",
+    "Android Auto ",
+    "DialogFlow",
+    "C",
+    "C++",
+    "Swif",
+    "Ruby",
+    "Groovy",
+    "React Native",
+    "Python"
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Webonise lab",
+      "start_date": 1370979604,
+      "end_date": 1478893204,
+      "data": "https://gist.githubusercontent.com/RanaRanvijaySingh/61c8fd78ac370da3050afa8bab06f688/raw/7edf75b1a9f7a43e2b629079ed8cdcd14b3d73f5/webonise",
+      "logo": "https://media.glassdoor.com/sqll/532781/webonise-lab-squarelogo-1397159392536.png",
+      "project_count": 6
+    },
+    {
+      "id": 2,
+      "name": "The Lean Apps",
+      "start_date": 1478893204,
+      "end_date": 1520797204,
+      "data": "https://gist.githubusercontent.com/RanaRanvijaySingh/3135f39381f13b2004ea7a215938cd48/raw/51b69f3385e77a7a23767f1848c49afee506269c/theleanapps",
+      "logo": "https://media.licdn.com/dms/image/C4D0BAQFT_dRlbpid5A/company-logo_200_200/0?e=2159024400&v=beta&t=tDMG9jBUzyIS3z_047sz3kjScv0IflidgVS_TwVowTM",
+      "project_count": 1
+    },
+    {
+      "id": 3,
+      "name": "Globant",
+      "start_date": 1520797204,
+      "end_date": 0,
+      "data": "https://gist.githubusercontent.com/RanaRanvijaySingh/b03778260d79c4f0d9c31776a3b7d3f8/raw/b802f11336617452c9905408f130adc7ab2ade85/globant",
+      "logo": "https://endeavor.org/content/uploads/2015/07/Logo%20-%20Globant.png",
+      "project_count": 3
+    }
+  ],
+  "education_summary": [
+    {
+      "id": 1,
+      "name": "St. Karens High School (ICSE board)",
+      "state": "Bihar",
+      "country": "India",
+      "certificate":"Secondary School Certificate (SSC)" ,
+      "grade": "76%",
+      "start_date": 1121110804,
+      "end_date": 1147376404
+    },{
+      "id": 2,
+      "name": "Bal Vidya Niketan (CBSE board)",
+      "state": "Bihar",
+      "country": "India",
+      "certificate":"Higher Secondary Education (HSC)" ,
+      "grade": "62%",
+      "start_date": 1147376404,
+      "end_date": 1210534804
+    },
+    {
+      "id": 3,
+      "name": "BVB College of Engineering and Techonology (VTU, Karnataka)",
+      "state": "Karnataka",
+      "country": "India",
+      "certificate":"B.Tech - Information Science" ,
+      "grade": "83%",
+      "start_date": 1250019604,
+      "end_date": 1370979604
+    }
+  ]
+}

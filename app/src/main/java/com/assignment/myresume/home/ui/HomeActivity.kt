@@ -1,9 +1,7 @@
 package com.assignment.myresume.home.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
 import com.assignment.myresume.home.domain.Company
-import com.assignment.myresume.home.domain.ResumeUi
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
@@ -93,7 +90,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
     /**
      * Function to set companies list
      */
-    private fun setCompanies(companies: List<Company>) {
+    private fun setCompanies(companies: List<CompanyUi>) {
         companiesAdapter = CompaniesAdapter(this)
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = RecyclerView.VERTICAL
@@ -108,7 +105,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
     /**
      * Call back from companies adapter class when a company is selected.
      */
-    override fun companySelected(company: Company) {
+    override fun companySelected(company: CompanyUi) {
 
     }
 }

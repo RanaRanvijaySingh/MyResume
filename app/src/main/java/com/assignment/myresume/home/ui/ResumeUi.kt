@@ -1,9 +1,9 @@
-package com.assignment.myresume.home.domain
+package com.assignment.myresume.home.ui
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class Resume(
+data class ResumeUi(
     @SerializedName("user") @Expose val user: String,
     @SerializedName("image") @Expose val image: String,
     @SerializedName("number") @Expose val number: Long,
@@ -19,27 +19,27 @@ data class Resume(
     @SerializedName("devops_tools") @Expose val devopsTools: List<String>,
     @SerializedName("languages") @Expose val languages: List<String>,
     @SerializedName("skill_summary") @Expose val skillSummary: List<String>,
-    @SerializedName("companies") @Expose val companies: List<Company>,
-    @SerializedName("education_summary") @Expose val educationSummary: List<EducationSummary>
+    @SerializedName("companies") @Expose val companies: List<CompanyUi>,
+    @SerializedName("education_summary") @Expose val educationSummary: List<EducationSummaryUi>
 )
 
-data class Company(
+data class CompanyUi(
     @SerializedName("id") @Expose val id: Int,
     @SerializedName("name") @Expose val name: String,
-    @SerializedName("start_date") @Expose val startDate: Long,
-    @SerializedName("end_date") @Expose val endDate: Long,
+    @SerializedName("start_date") @Expose val startDate: String,
+    @SerializedName("end_date") @Expose val endDate: String,
     @SerializedName("data") @Expose val data: String,
     @SerializedName("logo") @Expose val logo: String,
     @SerializedName("project_count") @Expose val projectCount: Int
 )
 
-class EducationSummary(
+class EducationSummaryUi(
     @SerializedName("id") @Expose val id: Int,
     @SerializedName("name") @Expose val name: String,
     @SerializedName("state") @Expose val state: String,
     @SerializedName("country") @Expose val country: String,
     @SerializedName("certificate") @Expose val certificate: String,
     @SerializedName("grade") @Expose val grade: String,
-    @SerializedName("start_date") @Expose val startDate: Long,
-    @SerializedName("end_date") @Expose val endDate: Long
+    @SerializedName("start_date") @Expose val startDate: String,
+    @SerializedName("end_date") @Expose val endDate: String
 )

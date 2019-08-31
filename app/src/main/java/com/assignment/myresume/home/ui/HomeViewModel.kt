@@ -3,7 +3,6 @@ package com.assignment.myresume.home.ui
 import androidx.lifecycle.MutableLiveData
 import com.assignment.myresume.base.BaseViewModelImpl
 import com.assignment.myresume.home.domain.GetResumeUseCase
-import com.assignment.myresume.home.domain.ResumeUi
 import com.assignment.myresume.utils.Constants
 import com.assignment.myresume.utils.NetworkUtils
 import io.reactivex.disposables.CompositeDisposable
