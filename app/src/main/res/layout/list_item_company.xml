@@ -24,8 +24,9 @@
 
         <TextView
             android:id="@+id/tvCompany"
-            android:layout_width="393dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_next"
             android:padding="@dimen/padding_small"
             android:textColor="@color/textColorPrimary"
             tools:text="Globant" />

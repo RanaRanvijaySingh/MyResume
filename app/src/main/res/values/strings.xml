@@ -15,5 +15,6 @@
     <string name="api_tools">Api tools</string>
     <string name="scm_tools">Scm Tools</string>
     <string name="languages">Speak Languages</string>
-    <string name="summary_of_skills">SUmmary of skills</string>
+    <string name="summary_of_skills">Summary of skills</string>
+    <string name="companies_worked_with">companies worked with</string>
 </resources>

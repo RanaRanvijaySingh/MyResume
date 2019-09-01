@@ -13,7 +13,7 @@ class SkillsAdapter : RecyclerView.Adapter<SkillViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SkillViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_skill, parent, false)
+            .inflate(R.layout.list_item_skill, null)
         return SkillViewHolder(view)
     }
 
@@ -22,7 +22,7 @@ class SkillsAdapter : RecyclerView.Adapter<SkillViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: SkillViewHolder, position: Int) {
-        holder.tvSkill?.text = list.get(position)
+        holder.tvSkill?.text = list[position]
     }
 
     /**

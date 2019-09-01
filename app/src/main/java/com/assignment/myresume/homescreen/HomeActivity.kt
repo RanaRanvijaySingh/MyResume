@@ -116,6 +116,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
             setHasFixedSize(true)
             setLayoutManager(layoutManager)
             adapter = companiesAdapter
+            isNestedScrollingEnabled = false
         }
         companiesAdapter.setList(companies)
     }
@@ -126,10 +127,11 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
     private fun setSkills(skills: List<String>) {
         skillsAdapter = SkillsAdapter()
         val layoutManager = GridLayoutManager(this, 3)
-        rvCompanies.apply {
+        rvSkills.apply {
             setHasFixedSize(true)
             setLayoutManager(layoutManager)
             adapter = skillsAdapter
+            isNestedScrollingEnabled = false
         }
         skillsAdapter.setList(skills)
     }

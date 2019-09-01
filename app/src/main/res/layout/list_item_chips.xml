@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_x_small"
     android:elevation="@dimen/elevation_default"
+    android:padding="@dimen/padding_small"
     app:cardCornerRadius="@dimen/chip_radius_large">
 
     <TextView
