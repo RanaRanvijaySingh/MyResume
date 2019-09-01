@@ -3,6 +3,7 @@ package com.assignment.myresume.homescreen
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -20,13 +21,13 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.view_carrier_summary.*
 import kotlinx.android.synthetic.main.view_profile.*
-import kotlinx.android.synthetic.main.view_progress.*
 import kotlinx.android.synthetic.main.view_qualifications_summary.*
 import javax.inject.Inject
 
 class HomeActivity : AppCompatActivity(), CompanySelectListener {
 
     val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
+//    lateinit var rlProgress: RelativeLayout
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -39,15 +40,18 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
         super.onCreate(savedInstanceState)
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
+        setContentView(R.layout.activity_home)
+//        rlProgress = findViewById(R.id.rlProgress)
         idleResource.increment()
         // Attach view model
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(HomeViewModel::class.java)
-        setContentView(R.layout.activity_home)
+
         // Attach all observer with view model
         viewModel.resumeUiLiveData.observe(this, resumeObserver)
         viewModel.progressLiveData.observe(this, progressObserver)
         viewModel.retryOptionLiveData.observe(this, retryObserver)
+        viewModel.getResume()
     }
 
     /**

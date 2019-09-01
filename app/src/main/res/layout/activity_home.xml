@@ -1,70 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-            android:id="@+id/svParent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/parent"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/svParent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:descendantFocusability="blocksDescendants"
-        tools:context=".homescreen.HomeActivity">
+        android:layout_height="match_parent">
 
-        <include layout="@layout/view_profile" />
-
-        <include layout="@layout/view_carrier_summary" />
-
-        <include layout="@layout/view_qualifications_summary" />
-
-        <TextView
-            android:id="@+id/tvSkillsTitle"
-            style="@style/textStyleTitle"
-            android:text="@string/summary_of_skills"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cvLanguages" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSkills"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:focusable="false"
-            android:layout_marginRight="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSkillsTitle" />
+            android:descendantFocusability="blocksDescendants"
+            tools:context=".homescreen.HomeActivity">
 
-        <TextView
-            android:id="@+id/tvCompaniesTitle"
-            style="@style/textStyleTitle"
-            android:text="@string/companies_worked_with"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvSkills" />
+            <include layout="@layout/view_profile" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCompanies"
-            android:layout_width="0dp"
+            <include layout="@layout/view_carrier_summary" />
+
+            <include layout="@layout/view_qualifications_summary" />
+
+            <TextView
+                android:id="@+id/tvSkillsTitle"
+                style="@style/textStyleTitle"
+                android:text="@string/summary_of_skills"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvLanguages" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSkills"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:focusable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSkillsTitle" />
+
+            <TextView
+                android:id="@+id/tvCompaniesTitle"
+                style="@style/textStyleTitle"
+                android:text="@string/companies_worked_with"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvSkills" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCompanies"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:focusable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompaniesTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rlProgress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:background="@color/bg_progressbar"
+        android:clickable="true"
+        android:elevation="@dimen/elevation_default"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:focusable="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCompaniesTitle" />
-
-        <include
-            android:id="@+id/include"
-            layout="@layout/view_progress" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
