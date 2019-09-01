@@ -32,6 +32,17 @@ class ProjectFragment private constructor() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         project = arguments?.getParcelable<ProjectUi>(Constants.IntentKeys.PROJECT)
-        project?.apply { tvProject.text = name }
+        project?.let { setProjectDetail(it) }
+    }
+
+    private fun setProjectDetail(projectUi: ProjectUi) {
+        tvName.text = projectUi.name
+        tvEmployer.text = String.format(resources.getString(R.string.employer_, projectUi.employer))
+        tvTechnology.text = String.format(resources.getString(R.string.technology, projectUi.technologies))
+        tvOs.text = String.format(resources.getString(R.string.os, projectUi.operatingSystem))
+        tvDomain.text = String.format(resources.getString(R.string.domain, projectUi.domain))
+        tvAppLink.text = String.format(resources.getString(R.string.application_link, projectUi.applicationLink))
+        tvProjectDescription.text  = projectUi.projectDescription
+        tvRole.text = projectUi.roleAndResponsibilities
     }
 }

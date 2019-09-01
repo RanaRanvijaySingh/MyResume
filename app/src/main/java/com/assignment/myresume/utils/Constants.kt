@@ -5,6 +5,7 @@ class Constants {
         companion object {
             const val NO_INTERNET = "No internet"
             const val UNABLE_TO_FETCH_DATA = "Unable to fetch data"
+            const val WORKING_HERE = "Working here"
         }
     }
 

@@ -13,7 +13,7 @@ class DateTimeUtils @Inject constructor() {
 
     fun getFormattedDate(timestamp: Long): String {
         if (timestamp <= 0L)
-            return ""
+            return Constants.Messages.WORKING_HERE
         val date = Date(timestamp * 1000)
         val format = SimpleDateFormat(DEFAULT_FORMAT, Locale.getDefault())
         return format.format(date)

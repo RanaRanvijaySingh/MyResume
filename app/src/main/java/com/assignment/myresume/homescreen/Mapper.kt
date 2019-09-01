@@ -1,12 +1,12 @@
 package com.assignment.myresume.homescreen
 
-import com.assignment.myresume.utils.Constants
 import com.assignment.myresume.utils.DateTimeUtils
-import java.lang.StringBuilder
+import com.assignment.myresume.utils.StringUtils
 import javax.inject.Inject
 
 class Mapper @Inject constructor(
-    private val dateTimeUtils: DateTimeUtils
+    private val dateTimeUtils: DateTimeUtils,
+    private val stringUtils: StringUtils
 ) {
     fun map(resume: Resume): ResumeUi {
         var companiesUi = getCompaniesUi(resume.companies)
@@ -16,19 +16,18 @@ class Mapper @Inject constructor(
             image = resume.image,
             number = resume.number,
             email = resume.email,
-//            careerSummary = resume.careerSummary,
-            careerSummary = getListAppearance(resume.careerSummary),
-            projectManagementTools = getListAppearance(resume.projectManagementTools),
-            unitUiTestTools = getListAppearance(resume.unitUiTestTools),
-            databases = getListAppearance(resume.databases),
-            operatingSystem = getListAppearance(resume.operatingSystem),
-            programmingLanguages = getListAppearance(resume.programmingLanguages),
-            scmTool = getListAppearance(resume.scmTool),
-            apiTool = getListAppearance(resume.apiTool),
-            devopsTools = getListAppearance(resume.devopsTools),
+            careerSummary = stringUtils.getListAppearance(resume.careerSummary),
+            projectManagementTools = stringUtils.getListAppearance(resume.projectManagementTools),
+            unitUiTestTools = stringUtils.getListAppearance(resume.unitUiTestTools),
+            databases = stringUtils.getListAppearance(resume.databases),
+            operatingSystem = stringUtils.getListAppearance(resume.operatingSystem),
+            programmingLanguages = stringUtils.getListAppearance(resume.programmingLanguages),
+            scmTool = stringUtils.getListAppearance(resume.scmTool),
+            apiTool = stringUtils.getListAppearance(resume.apiTool),
+            devopsTools = stringUtils.getListAppearance(resume.devopsTools),
             companies = companiesUi,
             educationSummary = educationSummariesUi,
-            languages = getListAppearance(resume.languages),
+            languages = stringUtils.getListAppearance(resume.languages),
             skillSummary = resume.skillSummary
         )
     }
@@ -72,20 +71,5 @@ class Mapper @Inject constructor(
             educationSummaries.add(educationSummary)
         }
         return educationSummaries
-    }
-
-    /**
-     * Function to convert a list of strings into a formatted single string
-     */
-    fun getListAppearance(careerSummary: List<String>): String {
-        val sb = StringBuilder()
-        careerSummary.forEach { entry ->
-            sb.apply {
-                append(Constants.StringValues.DASH_SPACE)
-                append(entry)
-                append(Constants.StringValues.NEW_LINE)
-            }
-        }
-        return sb.toString()
     }
 }

@@ -1,12 +1,12 @@
 package com.assignment.myresume.homescreen.companyscreen
 
-import com.assignment.myresume.utils.Constants
 import com.assignment.myresume.utils.DateTimeUtils
-import java.lang.StringBuilder
+import com.assignment.myresume.utils.StringUtils
 import javax.inject.Inject
 
 class Mapper @Inject constructor(
-    private val dateTimeUtils: DateTimeUtils
+    private val dateTimeUtils: DateTimeUtils,
+    private val stringUtils: StringUtils
 ) {
     fun map(companyDetail: CompanyDetail): CompanyDetailUi {
         var projectsUi = getProjectsUi(companyDetail.projects)
@@ -17,9 +17,9 @@ class Mapper @Inject constructor(
             duration = dateTimeUtils.getDuration(companyDetail.startDate, companyDetail.endDate),
             id = companyDetail.id,
             logo = companyDetail.logo,
-            designations = getListAppearance(companyDetail.designations),
+            designations = stringUtils.getListAppearance(companyDetail.designations),
             projects = projectsUi,
-            role = getListAppearance(companyDetail.role)
+            role = stringUtils.getListAppearance(companyDetail.role)
         )
     }
 
@@ -37,25 +37,10 @@ class Mapper @Inject constructor(
                 domain = project.domain,
                 applicationLink = project.applicationLink,
                 projectDescription = project.projectDescription,
-                roleAndResponsibilities = project.roleAndResponsibilities
+                roleAndResponsibilities = stringUtils.getListAppearance(project.roleAndResponsibilities)
             )
             projectsUi.add(projectUi)
         }
         return projectsUi
-    }
-
-    /**
-     * Function to convert a list of strings into a formatted single string
-     */
-    private fun getListAppearance(careerSummary: List<String>): String {
-        val sb = StringBuilder()
-        careerSummary.forEach { entry ->
-            sb.apply {
-                append(Constants.StringValues.DASH_SPACE)
-                append(entry)
-                append(Constants.StringValues.NEW_LINE)
-            }
-        }
-        return sb.toString()
     }
 }

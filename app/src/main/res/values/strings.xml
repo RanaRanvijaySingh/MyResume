@@ -19,4 +19,10 @@
     <string name="companies_worked_with">companies worked with</string>
     <string name="designation">Designation</string>
     <string name="roles_and_responsibility">Roles and responsibility</string>
+    <string name="employer_">Employer: %1$s</string>
+    <string name="technology">Technology: %1$s</string>
+    <string name="os">OS: %1$s</string>
+    <string name="domain">Domain: %1$s</string>
+    <string name="application_link">Application link: %1$s</string>
+    <string name="project_description">Project description</string>
 </resources>

@@ -3,6 +3,7 @@ package com.assignment.myresume.homescreen.companiesscreen
 import com.assignment.myresume.testutils.TestObjects
 import com.assignment.myresume.homescreen.companyscreen.Mapper
 import com.assignment.myresume.utils.DateTimeUtils
+import com.assignment.myresume.utils.StringUtils
 import com.google.gson.Gson
 import org.junit.Before
 import org.junit.Test
@@ -15,7 +16,7 @@ class MapperTest {
 
     @Before
     fun setUp() {
-        mapper = Mapper(DateTimeUtils())
+        mapper = Mapper(DateTimeUtils(), StringUtils())
     }
 
     /**

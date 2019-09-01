@@ -2,6 +2,7 @@ package com.assignment.myresume.homescreen
 
 import com.assignment.myresume.testutils.TestObjects
 import com.assignment.myresume.utils.DateTimeUtils
+import com.assignment.myresume.utils.StringUtils
 import com.google.gson.Gson
 import org.junit.Assert
 import org.junit.Before
@@ -13,7 +14,7 @@ class MapperTest {
 
     @Before
     fun setUp() {
-        mapper = Mapper(DateTimeUtils())
+        mapper = Mapper(DateTimeUtils(), StringUtils())
     }
 
     /**
@@ -47,13 +48,6 @@ class MapperTest {
     fun test_map_languages() {
         val actualObject = mapper.map(TestObjects.resume).languages
         val expectedObject = TestObjects.resumeUi.languages
-        Assert.assertEquals(expectedObject, actualObject)
-    }
-
-    @Test
-    fun test_listAppearance() {
-        val actualObject = mapper.getListAppearance(listOf<String>("hello", "hi","how"))
-        val expectedObject = "- hello\n- hi\n- how\n"
         Assert.assertEquals(expectedObject, actualObject)
     }
 }

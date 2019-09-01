@@ -26,6 +26,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpProjects"
         android:layout_width="0dp"
+        android:background="@color/bg_light_grey"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

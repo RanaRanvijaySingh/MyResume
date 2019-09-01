@@ -1,35 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent"
     android:layout_width="match_parent"
+    android:padding="@dimen/margin_default"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvProject"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="@dimen/margin_default"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/padding_default">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvProject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hello " />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_default"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Some project (Android Application)" />
+
+                <TextView
+                    android:id="@+id/tvEmployer"
+                    style="@style/textStyleContent"
+                    android:padding="@dimen/padding_default"
+                    android:text="@string/employer_"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                <TextView
+                    android:id="@+id/tvTechnology"
+                    style="@style/textStyleContent"
+                    android:padding="@dimen/padding_default"
+                    android:text="@string/technology"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEmployer" />
+
+                <TextView
+                    android:id="@+id/tvOs"
+                    style="@style/textStyleContent"
+                    android:padding="@dimen/padding_default"
+                    android:text="@string/os"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTechnology" />
+
+                <TextView
+                    android:id="@+id/tvDomain"
+                    style="@style/textStyleContent"
+                    android:padding="@dimen/padding_default"
+                    android:text="@string/domain"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvOs" />
+
+                <TextView
+                    android:id="@+id/tvAppLink"
+                    style="@style/textStyleContent"
+                    android:padding="@dimen/padding_default"
+                    android:text="@string/application_link"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDomain" />
+
+                <TextView
+                    android:id="@+id/tvProjectDescriptionTitle"
+                    style="@style/textStyleTitle"
+                    android:text="@string/project_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAppLink" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvProjectDescription"
+                    style="@style/cardStyleDefault"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvProjectDescriptionTitle">
+
+                    <TextView
+                        android:id="@+id/tvProjectDescription"
+                        style="@style/textStyleContent"
+                        tools:text="This is a dummy text" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvRoleTitle"
+                    style="@style/testStyleSubtitle"
+                    android:text="@string/roles_and_responsibility"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvProjectDescription" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvRole"
+                    style="@style/cardStyleDefault"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRoleTitle">
+
+                    <TextView
+                        android:id="@+id/tvRole"
+                        style="@style/textStyleContent"
+                        tools:text="This is a dummy text" />
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
     </androidx.cardview.widget.CardView>
 
     <include
         android:id="@+id/include"
-        layout="@layout/view_progress" />
+        layout="@layout/view_progress"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="366dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,5 +11,6 @@
     <color name="textColorWhite">#FFFFFF</color>
 
     <color name="bg_progressbar">#AA000000</color>
+    <color name="bg_light_grey">#AABEBEBE</color>
     <color name="divider">#000000</color>
 </resources>

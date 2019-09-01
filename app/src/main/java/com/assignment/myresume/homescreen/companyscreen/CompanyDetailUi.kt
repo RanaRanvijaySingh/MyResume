@@ -26,7 +26,7 @@ data class ProjectUi(
     @SerializedName("domain") @Expose val domain: String?,
     @SerializedName("application_link") @Expose val applicationLink: String?,
     @SerializedName("project_description") @Expose val projectDescription: String?,
-    @SerializedName("role_and_responsibilities") @Expose val roleAndResponsibilities: List<String>?
+    @SerializedName("role_and_responsibilities") @Expose val roleAndResponsibilities: String?
 ) : Parcelable {
     constructor(source: Parcel) : this(
         source.readString(),
@@ -36,7 +36,7 @@ data class ProjectUi(
         source.readString(),
         source.readString(),
         source.readString(),
-        source.createStringArrayList()
+        source.readString()
     )
 
     override fun describeContents() = 0
@@ -49,7 +49,7 @@ data class ProjectUi(
         writeString(domain)
         writeString(applicationLink)
         writeString(projectDescription)
-        writeStringList(roleAndResponsibilities)
+        writeString(roleAndResponsibilities)
     }
 
     companion object {
@@ -60,3 +60,4 @@ data class ProjectUi(
         }
     }
 }
+

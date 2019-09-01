@@ -20,7 +20,7 @@ class DateTimeUtilsTest {
 
     @Test
     fun test_getFormattedDate_forInvalid() {
-        assertEquals("", dateTimeUtil.getFormattedDate(-1567257305))
+        assertEquals("Working here", dateTimeUtil.getFormattedDate(-1567257305))
     }
 
     @Test
@@ -31,7 +31,7 @@ class DateTimeUtilsTest {
     @Test
     fun test_getDuration_for0AsEndDate() {
         val actualObject = dateTimeUtil.getDuration(1478893204L, 0L)
-        val expectedObject = "2 months"
+        val expectedObject = "2 years 10 months"
         assertEquals(expectedObject, actualObject)
     }
 
@@ -45,7 +45,7 @@ class DateTimeUtilsTest {
     @Test
     fun test_getDuration_forValid() {
         val actualObject = dateTimeUtil.getDuration(1478893204L, 1778893204L)
-        val expectedObject = "9 months"
+        val expectedObject = "9 years 7 months"
         assertEquals(expectedObject, actualObject)
     }
 }

@@ -20,7 +20,6 @@ class ProjectsActivity : AppCompatActivity() {
 
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
-
         setContentView(R.layout.activity_projects)
 
         // Get company detail data url from intent

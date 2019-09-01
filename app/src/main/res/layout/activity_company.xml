@@ -139,8 +139,10 @@
         android:id="@+id/btnProject"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:onClick="onClickProjects"
         android:text="@string/projects"
+        android:textColor="@color/textColorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
