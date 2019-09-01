@@ -2,6 +2,7 @@
 This application contains all my CV details, separated out in three screens (Home, Companies, and Projects).
 
 ## Screenshot
+![20190901_192929](https://github.globant.com/storage/user/2250/files/5366b200-ccef-11e9-8341-4ab6f3dd9bc3)
 
 ## Architecture
 The application is designed on MVVM Pattern following the rules of clean architecture.
