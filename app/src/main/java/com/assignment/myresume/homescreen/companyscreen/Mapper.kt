@@ -1,6 +1,8 @@
 package com.assignment.myresume.homescreen.companyscreen
 
+import com.assignment.myresume.utils.Constants
 import com.assignment.myresume.utils.DateTimeUtils
+import java.lang.StringBuilder
 import javax.inject.Inject
 
 class Mapper @Inject constructor(
@@ -12,11 +14,12 @@ class Mapper @Inject constructor(
             name = companyDetail.name,
             endDate = dateTimeUtils.getFormattedDate(companyDetail.endDate),
             startDate = dateTimeUtils.getFormattedDate(companyDetail.startDate),
+            duration = dateTimeUtils.getDuration(companyDetail.startDate, companyDetail.endDate),
             id = companyDetail.id,
             logo = companyDetail.logo,
-            designations = companyDetail.designations,
+            designations = getListAppearance(companyDetail.designations),
             projects = projectsUi,
-            role = companyDetail.role
+            role = getListAppearance(companyDetail.role)
         )
     }
 
@@ -39,5 +42,20 @@ class Mapper @Inject constructor(
             projectsUi.add(projectUi)
         }
         return projectsUi
+    }
+
+    /**
+     * Function to convert a list of strings into a formatted single string
+     */
+    private fun getListAppearance(careerSummary: List<String>): String {
+        val sb = StringBuilder()
+        careerSummary.forEach { entry ->
+            sb.apply {
+                append(Constants.StringValues.DASH_SPACE)
+                append(entry)
+                append(Constants.StringValues.NEW_LINE)
+            }
+        }
+        return sb.toString()
     }
 }

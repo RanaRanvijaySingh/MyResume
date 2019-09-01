@@ -11,9 +11,10 @@ class CompanyDetailUi(
     @SerializedName("name") @Expose val name: String,
     @SerializedName("start_date") @Expose val startDate: String,
     @SerializedName("end_date") @Expose val endDate: String,
+    @SerializedName("duration") @Expose val duration: String,
     @SerializedName("logo") @Expose val logo: String,
-    @SerializedName("designations") @Expose val designations: List<String>,
-    @SerializedName("role") @Expose val role: List<String>,
+    @SerializedName("designations") @Expose val designations: String,
+    @SerializedName("role") @Expose val role: String,
     @SerializedName("projects") @Expose val projects: List<ProjectUi>
 )
 

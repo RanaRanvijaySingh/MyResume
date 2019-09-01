@@ -36,4 +36,5 @@
     <dimen name="chip_radius_large">10sp</dimen>
     <dimen name="elevation_default">5dp</dimen>
     <dimen name="height_min_profile">250dp</dimen>
+    <dimen name="company_logo_default_size">120dp</dimen>
 </resources>

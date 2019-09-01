@@ -74,6 +74,9 @@ class Mapper @Inject constructor(
         return educationSummaries
     }
 
+    /**
+     * Function to convert a list of strings into a formatted single string
+     */
     fun getListAppearance(careerSummary: List<String>): String {
         val sb = StringBuilder()
         careerSummary.forEach { entry ->

@@ -12,6 +12,7 @@ import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
 import com.assignment.myresume.homescreen.companyscreen.projectsscreen.ProjectsActivity
 import com.assignment.myresume.utils.Constants
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_company.*
 import kotlinx.android.synthetic.main.view_progress.*
@@ -66,8 +67,13 @@ class CompanyActivity : AppCompatActivity() {
      */
     private val companyDetailObserver = Observer<CompanyDetailUi> { companyDetailUi ->
         this.companyDetailUi = companyDetailUi
-        setCompaniesDetail(companyDetailUi)
         setLogo(companyDetailUi.logo)
+        tvName.text = companyDetailUi.name
+        tvDesignation.text = companyDetailUi.designations
+        tvRole.text = companyDetailUi.role
+        tvStartDate.text = companyDetailUi.startDate
+        tvEndDate.text = companyDetailUi.endDate
+        tvDuration.text = companyDetailUi.duration
     }
 
     /**
@@ -93,20 +99,13 @@ class CompanyActivity : AppCompatActivity() {
     }
 
     /**
-     * Function to set companies details.
-     */
-    private fun setCompaniesDetail(companyDetailUi: CompanyDetailUi) {
-
-    }
-
-    /**
      * Function to set the profile image
      */
     private fun setLogo(imageUrl: String) {
-        /*Glide.with(this)
+        Glide.with(this)
             .load(imageUrl)
-            .centerCrop()
-            .into(ivProfile)*/
+            .centerInside()
+            .into(ivLogo)
     }
 
     fun onClickProjects(view: View) {

@@ -17,4 +17,6 @@
     <string name="languages">Speak Languages</string>
     <string name="summary_of_skills">Summary of skills</string>
     <string name="companies_worked_with">companies worked with</string>
+    <string name="designation">Designation</string>
+    <string name="roles_and_responsibility">Roles and responsibility</string>
 </resources>
