@@ -44,11 +44,7 @@ class HomeActivityTestForNavigation {
             )
         )
         constraintLayout.perform(scrollTo(), click())
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        Thread.sleep(700)
+        Thread.sleep(3000)
 
         val appCompatImageButton = onView(
             allOf(
@@ -67,11 +63,7 @@ class HomeActivityTestForNavigation {
             )
         )
         appCompatImageButton.perform(click())
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        Thread.sleep(700)
+        Thread.sleep(3000)
 
         val textView = onView(
             allOf(
@@ -102,7 +94,7 @@ class HomeActivityTestForNavigation {
             public override fun matchesSafely(view: View): Boolean {
                 val parent = view.parent
                 return parent is ViewGroup && parentMatcher.matches(parent)
-                        && view == parent.getChildAt(position)
+                    && view == parent.getChildAt(position)
             }
         }
     }

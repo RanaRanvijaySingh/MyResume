@@ -27,7 +27,6 @@ import javax.inject.Inject
 class HomeActivity : AppCompatActivity(), CompanySelectListener {
 
     val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
-//    lateinit var rlProgress: RelativeLayout
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -41,7 +40,6 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
         setContentView(R.layout.activity_home)
-//        rlProgress = findViewById(R.id.rlProgress)
         idleResource.increment()
         // Attach view model
         viewModel = ViewModelProviders.of(this, viewModelFactory)

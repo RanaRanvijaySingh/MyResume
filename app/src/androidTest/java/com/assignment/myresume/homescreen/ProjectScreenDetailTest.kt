@@ -23,102 +23,81 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class HomeActivityTestForProjectFlow {
+class ProjectScreenDetailTest {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(HomeActivity::class.java)
 
     @Test
-    fun homeActivityTest3() {
-        Thread.sleep(3000)
+    fun projectScreenDetailTest() {
         val constraintLayout = onView(
             childAtPosition(
-                allOf(
-                    withId(R.id.rvCompanies),
+                allOf(withId(R.id.rvCompanies),
                     childAtPosition(
                         withId(R.id.parent),
-                        27
-                    )
-                ),
-                0
-            )
-        )
+                        27)),
+                2))
         constraintLayout.perform(scrollTo(), click())
-        Thread.sleep(3000)
 
-        val appCompatImageButton = onView(
-            allOf(
-                withContentDescription("Navigate up"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.toolbar),
-                        childAtPosition(
-                            withId(R.id.appbar),
-                            0
-                        )
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatImageButton.perform(click())
-        Thread.sleep(3000)
-
-        val constraintLayout2 = onView(
-            childAtPosition(
-                allOf(
-                    withId(R.id.rvCompanies),
-                    childAtPosition(
-                        withId(R.id.parent),
-                        27
-                    )
-                ),
-                2
-            )
-        )
-        constraintLayout2.perform(scrollTo(), click())
         Thread.sleep(3000)
 
         val appCompatButton = onView(
-            allOf(
-                withId(R.id.btnProject), withText("projects"),
+            allOf(withId(R.id.btnProject), withText("projects"),
                 childAtPosition(
-                    allOf(
-                        withId(R.id.parent),
+                    allOf(withId(R.id.parent),
                         childAtPosition(
                             withId(android.R.id.content),
-                            0
-                        )
-                    ),
-                    2
-                ),
-                isDisplayed()
-            )
-        )
+                            0)),
+                    2),
+                isDisplayed()))
         appCompatButton.perform(click())
+
         Thread.sleep(3000)
 
         val textView = onView(
-            allOf(
-                withId(R.id.tvName), withText("FCV (Android Application)"),
+            allOf(withId(R.id.tvName), withText("FCV (Android Application)"),
                 childAtPosition(
                     childAtPosition(
                         IsInstanceOf.instanceOf(android.widget.ScrollView::class.java),
-                        0
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
+                        0),
+                    0),
+                isDisplayed()))
         textView.check(matches(withText("FCV (Android Application)")))
+
+        val textView2 = onView(
+            allOf(withId(R.id.tvEmployer), withText("Employer: Cannot disclose"),
+                childAtPosition(
+                    childAtPosition(
+                        IsInstanceOf.instanceOf(android.widget.ScrollView::class.java),
+                        0),
+                    1),
+                isDisplayed()))
+        textView2.check(matches(withText("Employer: Cannot disclose")))
+
+        val textView3 = onView(
+            allOf(withId(R.id.tvTechnology), withText("Technology: Kotlin"),
+                childAtPosition(
+                    childAtPosition(
+                        IsInstanceOf.instanceOf(android.widget.ScrollView::class.java),
+                        0),
+                    2),
+                isDisplayed()))
+        textView3.check(matches(withText("Technology: Kotlin")))
+
+        val textView4 = onView(
+            allOf(withId(R.id.tvDomain), withText("Domain: Banking"),
+                childAtPosition(
+                    childAtPosition(
+                        IsInstanceOf.instanceOf(android.widget.ScrollView::class.java),
+                        0),
+                    4),
+                isDisplayed()))
+        textView4.check(matches(withText("Domain: Banking")))
     }
 
     private fun childAtPosition(
-        parentMatcher: Matcher<View>, position: Int
-    ): Matcher<View> {
+        parentMatcher: Matcher<View>, position: Int): Matcher<View> {
 
         return object : TypeSafeMatcher<View>() {
             override fun describeTo(description: Description) {
@@ -129,7 +108,7 @@ class HomeActivityTestForProjectFlow {
             public override fun matchesSafely(view: View): Boolean {
                 val parent = view.parent
                 return parent is ViewGroup && parentMatcher.matches(parent)
-                        && view == parent.getChildAt(position)
+                    && view == parent.getChildAt(position)
             }
         }
     }
