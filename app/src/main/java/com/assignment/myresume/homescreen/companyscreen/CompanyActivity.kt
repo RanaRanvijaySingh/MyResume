@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.test.espresso.idling.CountingIdlingResource
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
+import com.assignment.myresume.homescreen.HomeActivity
 import com.assignment.myresume.homescreen.companyscreen.projectsscreen.ProjectsActivity
 import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
@@ -21,6 +23,7 @@ import javax.inject.Inject
 
 
 class CompanyActivity : AppCompatActivity() {
+    val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -34,7 +37,7 @@ class CompanyActivity : AppCompatActivity() {
 
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
-
+        idleResource.increment()
         // Attach view model
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(CompanyViewModel::class.java)
@@ -66,6 +69,7 @@ class CompanyActivity : AppCompatActivity() {
      * Observer for company detail.
      */
     private val companyDetailObserver = Observer<CompanyDetailUi> { companyDetailUi ->
+        idleResource.decrement()
         this.companyDetailUi = companyDetailUi
         setLogo(companyDetailUi.logo)
         tvName.text = companyDetailUi.name

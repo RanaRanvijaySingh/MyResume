@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.idling.CountingIdlingResource
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
 import com.assignment.myresume.homescreen.companyscreen.CompanyActivity
@@ -25,6 +26,8 @@ import javax.inject.Inject
 
 class HomeActivity : AppCompatActivity(), CompanySelectListener {
 
+    val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
+
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -36,6 +39,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
         super.onCreate(savedInstanceState)
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
+        idleResource.increment()
         // Attach view model
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(HomeViewModel::class.java)
@@ -50,6 +54,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
      * Observer for resume data.
      */
     private val resumeObserver = Observer<ResumeUi> { resumeUi ->
+        idleResource.decrement()
         setProfile(resumeUi)
         setCompanies(resumeUi.companies)
         setSkills(resumeUi.skillSummary)
