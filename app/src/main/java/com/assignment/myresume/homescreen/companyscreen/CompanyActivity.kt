@@ -17,7 +17,6 @@ import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_company.*
-import kotlinx.android.synthetic.main.view_progress.*
 import java.util.ArrayList
 import javax.inject.Inject
 
