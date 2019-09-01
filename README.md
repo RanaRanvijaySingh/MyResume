@@ -29,13 +29,12 @@ The components of the application are as follows:
  8. DONE!
  
  ## Advantages
- 1. Your UI is dumb.
- 2. UI does not have any logic.
- 3. Since data is stored in LiveData which is lifecycle aware object, recreating the view does not need the data reload.
- 4. Because of LiveData and Observer pattern you don't need to worry about the data change coming from back thread.
+ 1. Your UI is dumb, does not have any logic.
+ 3. Since data is stored in LiveData which is lifecycle aware object, recreating the view don't need the data reload.
+ 4. Because of LiveData and Observer pattern you don't need to worry about the data change coming from back process.
  5. If the view is destroyed during an api call you need not worry about any crash because of UI.
  6. All the heavy lifting and conversion is being done on the UseCase level on the back thread.
- 7. The logic or mapping changes are totally unit testable along with usecase.
+ 7. The logic or mapping changes are totally unit testable along with usecase, view model and repository.
  8. The amount of code in the view is very less because its divided in different components with smaller code blocks.
  
  ## Json data hosted on Gist
