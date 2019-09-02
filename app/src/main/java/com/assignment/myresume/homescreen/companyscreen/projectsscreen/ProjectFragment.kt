@@ -10,7 +10,7 @@ import com.assignment.myresume.homescreen.companyscreen.ProjectUi
 import com.assignment.myresume.utils.Constants
 import kotlinx.android.synthetic.main.fragment_project.*
 
-class ProjectFragment private constructor() : Fragment() {
+class ProjectFragment : Fragment() {
 
     var project: ProjectUi? = null
 
@@ -42,7 +42,7 @@ class ProjectFragment private constructor() : Fragment() {
         tvOs.text = String.format(resources.getString(R.string.os, projectUi.operatingSystem))
         tvDomain.text = String.format(resources.getString(R.string.domain, projectUi.domain))
         tvAppLink.text = String.format(resources.getString(R.string.application_link, projectUi.applicationLink))
-        tvProjectDescription.text  = projectUi.projectDescription
+        tvProjectDescription.text = projectUi.projectDescription
         tvRole.text = projectUi.roleAndResponsibilities
     }
 }
