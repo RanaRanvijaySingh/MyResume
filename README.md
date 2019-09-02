@@ -37,6 +37,22 @@ The components of the application are as follows:
  7. The logic or mapping changes are totally unit testable along with usecase, view model and repository.
  8. The amount of code in the view is very less because its divided in different components with smaller code blocks.
  
+ ## CI/CD Tools
+ ### Fastlane
+ - Used fastlane to do all the post development process, like build creating and testing both Unit and UI test cases.
+ - The lane for BETA deployment is also included but not using it.
+ - Screengrab dependencies are added but since it requires additional permission. I have commented the code out.
+ 
+ ``` fastlane qa ```
+ The above command will do couple of tasks for you.
+ - Clean the project.
+ - Create debug build.
+ - Run Unit test cases.
+ - Run Ui test cases.
+ 
+ ## Test coverage screenshot
+ 
+ 
  ## Json data hosted on Gist
    - https://gist.githubusercontent.com/RanaRanvijaySingh/129a3b70d118dfeee857476e7103009a/raw/d7bb676152454d0ac46839902e61a6f72154cc20/resume
    -  https://gist.githubusercontent.com/RanaRanvijaySingh/61c8fd78ac370da3050afa8bab06f688/raw/7edf75b1a9f7a43e2b629079ed8cdcd14b3d73f5/webonise
