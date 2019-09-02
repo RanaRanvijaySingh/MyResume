@@ -24,7 +24,9 @@ android {
         }
     }
 }
-
+configurations {
+    ktlint
+}
 ext {
     appcompatVersion = '1.0.2'
     junitVersion = '4.12'

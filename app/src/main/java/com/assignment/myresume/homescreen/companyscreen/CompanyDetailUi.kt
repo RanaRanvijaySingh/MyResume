@@ -4,7 +4,6 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.util.ArrayList
 
 class CompanyDetailUi(
     @SerializedName("id") @Expose val id: Int,
@@ -60,4 +59,3 @@ data class ProjectUi(
         }
     }
 }
-

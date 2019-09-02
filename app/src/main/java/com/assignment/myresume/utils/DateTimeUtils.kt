@@ -2,7 +2,8 @@ package com.assignment.myresume.utils
 
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 
 class DateTimeUtils @Inject constructor() {

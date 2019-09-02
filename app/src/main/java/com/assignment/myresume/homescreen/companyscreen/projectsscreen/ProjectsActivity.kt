@@ -4,12 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
-import com.assignment.myresume.homescreen.companyscreen.CompanyDetailUi
 import com.assignment.myresume.homescreen.companyscreen.ProjectUi
 import com.assignment.myresume.utils.Constants
 import kotlinx.android.synthetic.main.activity_company.toolbar
 import kotlinx.android.synthetic.main.activity_projects.*
-import java.util.ArrayList
 
 class ProjectsActivity : AppCompatActivity() {
 

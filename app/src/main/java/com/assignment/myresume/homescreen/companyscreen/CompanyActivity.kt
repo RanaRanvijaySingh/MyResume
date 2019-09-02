@@ -8,20 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.test.espresso.idling.CountingIdlingResource
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
-import com.assignment.myresume.homescreen.HomeActivity
 import com.assignment.myresume.homescreen.companyscreen.projectsscreen.ProjectsActivity
 import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_company.*
-import java.util.ArrayList
+import java.util.*
 import javax.inject.Inject
 
 class CompanyActivity : AppCompatActivity() {
-    val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -50,7 +47,6 @@ class CompanyActivity : AppCompatActivity() {
         viewModel.progressLiveData.observe(this, progressObserver)
         viewModel.retryOptionLiveData.observe(this, retryObserver)
 
-        idleResource.increment()
         // Initiate call for company detail
         companyDataUrl?.let { viewModel.getCompanyDetail(it) }
     }

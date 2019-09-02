@@ -3,7 +3,6 @@ package com.assignment.myresume.utils
 import android.net.ConnectivityManager
 import javax.inject.Inject
 
-
 class NetworkUtils @Inject constructor(
     private val connectivityManager: ConnectivityManager
 ) {

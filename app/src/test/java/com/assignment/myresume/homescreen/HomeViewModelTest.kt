@@ -1,14 +1,12 @@
 package com.assignment.myresume.homescreen
 
-import com.assignment.myresume.homescreen.companyscreen.CompanyViewModel
-import com.assignment.myresume.homescreen.companyscreen.GetCompanyUseCase
 import com.assignment.myresume.testutils.TestObjects
 import com.assignment.myresume.utils.Constants
 import com.assignment.myresume.utils.NetworkUtils
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

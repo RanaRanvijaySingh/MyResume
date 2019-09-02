@@ -1,13 +1,15 @@
 package com.assignment.myresume.homescreen
 
-
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
@@ -23,14 +25,15 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class HomeActivityTestForNavigation {
+class GeneratedTestForProjectFlow {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(HomeActivity::class.java)
 
     @Test
-    fun homeActivityTest2() {
+    fun homeActivityTest3() {
+        Thread.sleep(3000)
         val constraintLayout = onView(
             childAtPosition(
                 allOf(
@@ -65,12 +68,46 @@ class HomeActivityTestForNavigation {
         appCompatImageButton.perform(click())
         Thread.sleep(3000)
 
+        val constraintLayout2 = onView(
+            childAtPosition(
+                allOf(
+                    withId(R.id.rvCompanies),
+                    childAtPosition(
+                        withId(R.id.parent),
+                        27
+                    )
+                ),
+                2
+            )
+        )
+        constraintLayout2.perform(scrollTo(), click())
+        Thread.sleep(3000)
+
+        val appCompatButton = onView(
+            allOf(
+                withId(R.id.btnProject), withText("projects"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.parent),
+                        childAtPosition(
+                            withId(android.R.id.content),
+                            0
+                        )
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatButton.perform(click())
+        Thread.sleep(3000)
+
         val textView = onView(
             allOf(
-                withId(R.id.tvCompany), withText("Webonise lab"),
+                withId(R.id.tvName), withText("FCV (Android Application)"),
                 childAtPosition(
                     childAtPosition(
-                        IsInstanceOf.instanceOf(android.view.ViewGroup::class.java),
+                        IsInstanceOf.instanceOf(android.widget.ScrollView::class.java),
                         0
                     ),
                     0
@@ -78,11 +115,12 @@ class HomeActivityTestForNavigation {
                 isDisplayed()
             )
         )
-        textView.check(matches(withText("Webonise lab")))
+        textView.check(matches(withText("FCV (Android Application)")))
     }
 
     private fun childAtPosition(
-        parentMatcher: Matcher<View>, position: Int
+        parentMatcher: Matcher<View>,
+        position: Int
     ): Matcher<View> {
 
         return object : TypeSafeMatcher<View>() {
@@ -93,8 +131,8 @@ class HomeActivityTestForNavigation {
 
             public override fun matchesSafely(view: View): Boolean {
                 val parent = view.parent
-                return parent is ViewGroup && parentMatcher.matches(parent)
-                    && view == parent.getChildAt(position)
+                return parent is ViewGroup && parentMatcher.matches(parent) &&
+                        view == parent.getChildAt(position)
             }
         }
     }

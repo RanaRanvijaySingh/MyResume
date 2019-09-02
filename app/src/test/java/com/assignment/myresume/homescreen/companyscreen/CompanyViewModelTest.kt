@@ -6,10 +6,8 @@ import com.assignment.myresume.utils.NetworkUtils
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
-import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Before
-
-import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock

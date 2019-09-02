@@ -13,7 +13,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 class CompanyActivityTest {
@@ -28,12 +27,12 @@ class CompanyActivityTest {
         intent.putExtra(Constants.IntentKeys.COMPANY_DETAIL_URL, intentCompanyUrl)
         intent.putExtra(Constants.IntentKeys.COMPANY_NAME, intentCompanyName)
         rule.launchActivity(intent)
+        Thread.sleep(3000)
     }
 
     @Test
     fun testCompanyName() {
         launchCompanyActivity()
-        Espresso.registerIdlingResources(rule.activity.idleResource)
         Espresso.onView(ViewMatchers.withId(R.id.tvName))
             .check(ViewAssertions.matches(ViewMatchers.withText("Globant")))
     }
@@ -41,7 +40,6 @@ class CompanyActivityTest {
     @Test
     fun testDuration() {
         launchCompanyActivity()
-        Espresso.registerIdlingResources(rule.activity.idleResource)
         Espresso.onView(ViewMatchers.withId(R.id.tvDuration))
             .check(ViewAssertions.matches(ViewMatchers.withText("1 year 5 months")))
     }
@@ -49,7 +47,6 @@ class CompanyActivityTest {
     @Test
     fun testStartDate() {
         launchCompanyActivity()
-        Espresso.registerIdlingResources(rule.activity.idleResource)
         Espresso.onView(ViewMatchers.withId(R.id.tvStartDate))
             .check(ViewAssertions.matches(ViewMatchers.withText("Mar 2018")))
     }
@@ -57,7 +54,6 @@ class CompanyActivityTest {
     @Test
     fun testEndDate() {
         launchCompanyActivity()
-        Espresso.registerIdlingResources(rule.activity.idleResource)
         Espresso.onView(ViewMatchers.withId(R.id.tvEndDate))
             .check(ViewAssertions.matches(ViewMatchers.withText("Working here")))
     }
@@ -65,7 +61,6 @@ class CompanyActivityTest {
     @Test
     fun testDesignation() {
         launchCompanyActivity()
-        Espresso.registerIdlingResources(rule.activity.idleResource)
         Espresso.onView(ViewMatchers.withId(R.id.tvDesignation))
             .check(ViewAssertions.matches(ViewMatchers.withText("- Sr. Software Engineer\n")))
     }

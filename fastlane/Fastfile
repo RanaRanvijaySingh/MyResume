@@ -24,6 +24,12 @@ platform :android do
     gradle(task: 'assemble', build_type: 'Release')
   end
 
+  desc "Create debug build"
+  lane :qa do
+    #Create release build
+    gradle(task: 'assemble', build_type: 'Debug')
+  end
+
   desc "Push apk to beta, skip uploading metadata, images and screenshots."
   lane :pushToBeta do
     #Push the apk on beta
