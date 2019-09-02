@@ -1,0 +1,42 @@
+{
+  "id": 3,
+  "name": "Globant",
+  "start_date": "Mar 2018",
+  "end_date": "Working here",
+  "duration": "1 year 5 months",
+  "logo": "https://endeavor.org/content/uploads/2015/07/Logo%20-%20Globant.png",
+  "designations": "- Sr. Software Engineer\n",
+  "role": "- Obtaining project requirements from the client, formulating the requirements, assigning tasks to team members, and tracking the progress\n- Contributor to maintain and extend Globant’s association with its client\n- Designing app architecture\n- Working on developing a vivid range of Android apps\n- Conduct knowledge sharing sessions and tech talks at Globant-India\n- Continuously focused on improvements in technical/non-technical skills\n",
+  "projects": [
+    {
+      "name": "FCV (Android Application)",
+      "employer": "Cannot disclose",
+      "technologies": "Kotlin",
+      "operating_system": "Android – 4.3 onwards",
+      "domain": "Banking",
+      "application_link": "",
+      "project_description": "This application is designed for the user to easily manage their Debit/Credit cards. This application provides features like Add multiple cards, Lock/Unlock a card, View/Manage transactions, Control where a card can and cannot be used and many more.",
+      "role_and_responsibilities": "- Role and Responsibilities in the project:\n- Development from scratch\n- Requirement gathering from the client\n- Feature development\n- Maintenance and bugfixes\n"
+    },
+    {
+      "name": "LocationAlert (Android Auto Application)",
+      "employer": "Globant",
+      "technologies": "Kotlin",
+      "operating_system": "Android – 4.3 onwards",
+      "domain": "Tool",
+      "application_link": "",
+      "project_description": "This application is compatible with your car dashboard console which uses Android Auto App features. It’s a simple application to notify you on the go when you are nearby your desired location.",
+      "role_and_responsibilities": "- Role and Responsibilities in the project:\n- Design and Development from scratch\n- Maintenance and bugfixes\n"
+    },
+    {
+      "name": "Let’s Go (Carpool Application)",
+      "employer": "Globant",
+      "technologies": "Kotlin",
+      "operating_system": "Android – 4.3 onwards",
+      "domain": "Transportation",
+      "application_link": "",
+      "project_description": "It’s a simple application to minimize the traffic problem using the concept of carpooling. The application has basic features like booking a ride, posting a ride, monitoring upcoming/ongoing rides and many more.",
+      "role_and_responsibilities": "- Role and Responsibilities in the project:\n- Upgrading design for the app\n- Developing new features\n- Maintenance and bugfixes\n"
+    }
+  ]
+}

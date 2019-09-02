@@ -8,6 +8,8 @@ import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import com.assignment.myresume.R
+import com.assignment.myresume.homescreen.testutils.TestObjects
+import com.assignment.myresume.homescreen.testutils.TestUtils
 import com.assignment.myresume.utils.Constants
 import org.junit.Rule
 import org.junit.Test
@@ -22,6 +24,8 @@ class CompanyActivityTest {
     @get:Rule
     var rule = ActivityTestRule(CompanyActivity::class.java)
 
+    val companyUi = TestObjects.companyDetailUi
+
     private fun launchCompanyActivity() {
         val intent = Intent()
         intent.putExtra(Constants.IntentKeys.COMPANY_DETAIL_URL, intentCompanyUrl)
@@ -31,37 +35,60 @@ class CompanyActivityTest {
     }
 
     @Test
-    fun testCompanyName() {
+    fun testName() {
         launchCompanyActivity()
+        /** We can grab the screenshots using fastlane's screengrab tool.
+        Screengrab.screenshot("testCompanyName") **/
         Espresso.onView(ViewMatchers.withId(R.id.tvName))
-            .check(ViewAssertions.matches(ViewMatchers.withText("Globant")))
+            .check(ViewAssertions.matches(ViewMatchers.withText(companyUi.name)))
     }
 
     @Test
-    fun testDuration() {
+    fun testDesignationTitle() {
         launchCompanyActivity()
-        Espresso.onView(ViewMatchers.withId(R.id.tvDuration))
-            .check(ViewAssertions.matches(ViewMatchers.withText("1 year 5 months")))
+        Espresso.onView(ViewMatchers.withId(R.id.tvDesignationTitle))
+            .check(ViewAssertions.matches(ViewMatchers.withText(TestUtils.StringValues.DESIGNATION)))
     }
 
     @Test
-    fun testStartDate() {
+    fun testRelesAndResponsibilityTitle() {
         launchCompanyActivity()
-        Espresso.onView(ViewMatchers.withId(R.id.tvStartDate))
-            .check(ViewAssertions.matches(ViewMatchers.withText("Mar 2018")))
-    }
-
-    @Test
-    fun testEndDate() {
-        launchCompanyActivity()
-        Espresso.onView(ViewMatchers.withId(R.id.tvEndDate))
-            .check(ViewAssertions.matches(ViewMatchers.withText("Working here")))
+        Espresso.onView(ViewMatchers.withId(R.id.tvRoleTitle))
+            .check(ViewAssertions.matches(ViewMatchers.withText(TestUtils.StringValues.ROLES_AND_RESPONSIBILITIES)))
     }
 
     @Test
     fun testDesignation() {
         launchCompanyActivity()
         Espresso.onView(ViewMatchers.withId(R.id.tvDesignation))
-            .check(ViewAssertions.matches(ViewMatchers.withText("- Sr. Software Engineer\n")))
+            .check(ViewAssertions.matches(ViewMatchers.withText(companyUi.designations)))
+    }
+
+    @Test
+    fun testRelesAndResponsibility() {
+        launchCompanyActivity()
+        Espresso.onView(ViewMatchers.withId(R.id.tvRole))
+            .check(ViewAssertions.matches(ViewMatchers.withText(companyUi.role)))
+    }
+
+    @Test
+    fun testDuration() {
+        launchCompanyActivity()
+        Espresso.onView(ViewMatchers.withId(R.id.tvDuration))
+            .check(ViewAssertions.matches(ViewMatchers.withText(companyUi.duration)))
+    }
+
+    @Test
+    fun testStartDate() {
+        launchCompanyActivity()
+        Espresso.onView(ViewMatchers.withId(R.id.tvStartDate))
+            .check(ViewAssertions.matches(ViewMatchers.withText(companyUi.startDate)))
+    }
+
+    @Test
+    fun testEndDate() {
+        launchCompanyActivity()
+        Espresso.onView(ViewMatchers.withId(R.id.tvEndDate))
+            .check(ViewAssertions.matches(ViewMatchers.withText(companyUi.endDate)))
     }
 }

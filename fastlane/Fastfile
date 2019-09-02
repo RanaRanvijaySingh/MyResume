@@ -12,23 +12,46 @@ platform :android do
     pushToBeta
   end
 
+  desc "Deploy a new for QA"
+  lane :qa do
+    cleanBuild
+    createDebug
+    unitTestDebug
+    uiTest
+  end
+
+  #=========================================== CLEAN BUILD
+
   desc "Clean project"
   lane :cleanBuild do
     #Clean the build
     gradle(task: 'clean')
   end
 
+  #=========================================== TESTING COMMANDS
+
+  lane :unitTestDebug do
+    gradle(task: "testDebugUnitTest")
+  end
+
+  lane :uiTest do
+    gradle(task: "connectedAndroidTest")
+  end
+
+  #=========================================== BUILD CREATIONS COMMANDS
+
+  desc "Create debug build"
+  lane :createDebug do
+    gradle(task: 'assemble', build_type: 'Debug')
+  end
+
   desc "Create release build"
-  lane :createReleaseBuild do
+  lane :createRelease do
     #Create release build
     gradle(task: 'assemble', build_type: 'Release')
   end
 
-  desc "Create debug build"
-  lane :qa do
-    #Create release build
-    gradle(task: 'assemble', build_type: 'Debug')
-  end
+  #=========================================== PLAYSTORE DEPLOYMENT
 
   desc "Push apk to beta, skip uploading metadata, images and screenshots."
   lane :pushToBeta do

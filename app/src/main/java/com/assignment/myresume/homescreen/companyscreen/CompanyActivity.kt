@@ -15,7 +15,6 @@ import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_company.*
-import java.util.*
 import javax.inject.Inject
 
 class CompanyActivity : AppCompatActivity() {
