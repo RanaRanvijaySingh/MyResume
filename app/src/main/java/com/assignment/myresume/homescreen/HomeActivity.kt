@@ -49,7 +49,6 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
         viewModel.resumeUiLiveData.observe(this, resumeObserver)
         viewModel.progressLiveData.observe(this, progressObserver)
         viewModel.retryOptionLiveData.observe(this, retryObserver)
-        viewModel.getResume()
     }
 
     /**

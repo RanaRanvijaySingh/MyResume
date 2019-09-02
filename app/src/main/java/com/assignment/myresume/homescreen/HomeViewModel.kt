@@ -16,9 +16,9 @@ class HomeViewModel @Inject constructor(
     val progressLiveData = MutableLiveData<Boolean>()
     val retryOptionLiveData = MutableLiveData<String>()
 
-//    init {
-//        getResume()
-//    }
+    init {
+        getResume()
+    }
 
     fun getResume() {
         if (!networkUtils.isNetworkAvailable()) {

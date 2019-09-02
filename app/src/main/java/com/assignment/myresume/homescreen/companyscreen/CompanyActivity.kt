@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.activity_company.*
 import java.util.ArrayList
 import javax.inject.Inject
 
-
 class CompanyActivity : AppCompatActivity() {
     val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
 
@@ -36,11 +35,10 @@ class CompanyActivity : AppCompatActivity() {
 
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
-        idleResource.increment()
+        setContentView(R.layout.activity_company)
         // Attach view model
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(CompanyViewModel::class.java)
-        setContentView(R.layout.activity_company)
 
         // Get company detail data url from intent
         companyDataUrl = intent.getStringExtra(Constants.IntentKeys.COMPANY_DETAIL_URL)
@@ -52,6 +50,7 @@ class CompanyActivity : AppCompatActivity() {
         viewModel.progressLiveData.observe(this, progressObserver)
         viewModel.retryOptionLiveData.observe(this, retryObserver)
 
+        idleResource.increment()
         // Initiate call for company detail
         companyDataUrl?.let { viewModel.getCompanyDetail(it) }
     }
@@ -68,7 +67,6 @@ class CompanyActivity : AppCompatActivity() {
      * Observer for company detail.
      */
     private val companyDetailObserver = Observer<CompanyDetailUi> { companyDetailUi ->
-        idleResource.decrement()
         this.companyDetailUi = companyDetailUi
         setLogo(companyDetailUi.logo)
         tvName.text = companyDetailUi.name
