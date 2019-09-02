@@ -34,13 +34,13 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvSkills"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dimen_zero"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginLeft="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x_small"
+                android:layout_marginEnd="@dimen/margin_x_small"
+                android:layout_marginRight="@dimen/margin_x_small"
                 android:focusable="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,12 +56,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCompanies"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dimen_zero"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x_small"
+                android:layout_marginEnd="@dimen/margin_x_small"
+                android:layout_marginBottom="@dimen/margin_default"
                 android:focusable="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +72,8 @@
 
     <RelativeLayout
         android:id="@+id/rlProgress"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/dimen_zero"
+        android:layout_height="@dimen/dimen_zero"
         android:layout_centerInParent="true"
         android:background="@color/bg_progressbar"
         android:clickable="true"

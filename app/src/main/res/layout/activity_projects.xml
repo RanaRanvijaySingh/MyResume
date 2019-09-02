@@ -9,7 +9,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_zero"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,9 +25,9 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpProjects"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_zero"
+        android:layout_height="@dimen/dimen_zero"
         android:background="@color/bg_light_grey"
-        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
