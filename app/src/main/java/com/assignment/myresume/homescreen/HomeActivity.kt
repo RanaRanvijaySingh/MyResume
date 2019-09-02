@@ -39,7 +39,6 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
         // Dagger injection
         MyResumeApplication.appComponent.inject(this)
         setContentView(R.layout.activity_home)
-        idleResource.increment()
         // Attach view model
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(HomeViewModel::class.java)
@@ -48,13 +47,13 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
         viewModel.resumeUiLiveData.observe(this, resumeObserver)
         viewModel.progressLiveData.observe(this, progressObserver)
         viewModel.retryOptionLiveData.observe(this, retryObserver)
+        viewModel.getResume()
     }
 
     /**
      * Observer for resume data.
      */
     private val resumeObserver = Observer<ResumeUi> { resumeUi ->
-        idleResource.decrement()
         setProfile(resumeUi)
         setCompanies(resumeUi.companies)
         setSkills(resumeUi.skillSummary)
@@ -75,6 +74,7 @@ class HomeActivity : AppCompatActivity(), CompanySelectListener {
      */
     private val progressObserver = Observer<Boolean> { isProgressBarVisible ->
         rlProgress?.let {
+            idleResource.apply { if (isProgressBarVisible) increment() else decrement() }
             it.visibility = if (isProgressBarVisible) View.VISIBLE else View.GONE
         }
     }

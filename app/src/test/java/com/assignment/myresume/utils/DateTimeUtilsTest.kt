@@ -48,4 +48,32 @@ class DateTimeUtilsTest {
         val expectedObject = "9 years 7 months"
         assertEquals(expectedObject, actualObject)
     }
+
+    @Test
+    fun test_getDuration_forSingleMonth() {
+        val actualObject = dateTimeUtil.getDuration(1567435677L, 1570027677L)
+        val expectedObject = "1 month"
+        assertEquals(expectedObject, actualObject)
+    }
+
+    @Test
+    fun test_getDuration_forMonths() {
+        val actualObject = dateTimeUtil.getDuration(1567435677L, 1572706077L)
+        val expectedObject = "2 months"
+        assertEquals(expectedObject, actualObject)
+    }
+
+    @Test
+    fun test_getDuration_forSingleYear() {
+        val actualObject = dateTimeUtil.getDuration(1572706077L, 1604328477L)
+        val expectedObject = "1 year"
+        assertEquals(expectedObject, actualObject)
+    }
+
+    @Test
+    fun test_getDuration_forM9onths() {
+        val actualObject = dateTimeUtil.getDuration(1635864477L, 1698936477L)
+        val expectedObject = "2 years"
+        assertEquals(expectedObject, actualObject)
+    }
 }

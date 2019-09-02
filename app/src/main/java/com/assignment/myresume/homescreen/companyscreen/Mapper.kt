@@ -4,10 +4,17 @@ import com.assignment.myresume.utils.DateTimeUtils
 import com.assignment.myresume.utils.StringUtils
 import javax.inject.Inject
 
+/**
+ * Class to handle all the heavy conversion.
+ * ie. Converting API model to UI model
+ */
 class Mapper @Inject constructor(
     private val dateTimeUtils: DateTimeUtils,
     private val stringUtils: StringUtils
 ) {
+    /**
+     * Function to convert API model to UI model
+     */
     fun map(companyDetail: CompanyDetail): CompanyDetailUi {
         var projectsUi = getProjectsUi(companyDetail.projects)
         return CompanyDetailUi(

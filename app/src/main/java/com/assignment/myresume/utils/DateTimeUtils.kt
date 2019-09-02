@@ -6,12 +6,18 @@ import java.util.Date
 import java.util.Locale
 import javax.inject.Inject
 
+/**
+ * Util class to handle all data time conversion.
+ */
 class DateTimeUtils @Inject constructor() {
 
     companion object {
         const val DEFAULT_FORMAT = "MMM yyyy"
     }
 
+    /**
+     * Function to format given time stamp into default date format. eg. Aug 2019
+     */
     fun getFormattedDate(timestamp: Long): String {
         if (timestamp <= 0L)
             return Constants.Messages.WORKING_HERE

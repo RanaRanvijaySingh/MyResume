@@ -22,6 +22,7 @@ class Constants {
         companion object {
             const val DASH_SPACE = "- "
             const val NEW_LINE = "\n"
+            const val BLANK = ""
         }
     }
 

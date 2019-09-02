@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.test.espresso.idling.CountingIdlingResource
 import com.assignment.myresume.MyResumeApplication
 import com.assignment.myresume.R
+import com.assignment.myresume.homescreen.HomeActivity
 import com.assignment.myresume.homescreen.companyscreen.projectsscreen.ProjectsActivity
 import com.assignment.myresume.utils.Constants
 import com.bumptech.glide.Glide
@@ -25,6 +27,8 @@ class CompanyActivity : AppCompatActivity() {
     private lateinit var viewModel: CompanyViewModel
     private var companyDataUrl: String? = null
     private var companyDetailUi: CompanyDetailUi? = null
+
+    val idleResource = CountingIdlingResource(HomeActivity::class.java.simpleName)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +51,9 @@ class CompanyActivity : AppCompatActivity() {
         viewModel.retryOptionLiveData.observe(this, retryObserver)
 
         // Initiate call for company detail
-        companyDataUrl?.let { viewModel.getCompanyDetail(it) }
+        companyDataUrl?.let {
+            viewModel.getCompanyDetail(it)
+        }
     }
 
     private fun initToolbar(companyName: String?) {
@@ -77,6 +83,7 @@ class CompanyActivity : AppCompatActivity() {
      */
     private val progressObserver = Observer<Boolean> { isProgressBarVisible ->
         rlProgress?.let {
+            idleResource.apply { if (isProgressBarVisible) increment() else decrement() }
             it.visibility = if (isProgressBarVisible) View.VISIBLE else View.GONE
         }
     }

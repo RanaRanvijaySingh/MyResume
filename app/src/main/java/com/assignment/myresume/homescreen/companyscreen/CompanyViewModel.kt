@@ -16,16 +16,23 @@ class CompanyViewModel @Inject constructor(
     val progressLiveData = MutableLiveData<Boolean>()
     val retryOptionLiveData = MutableLiveData<String>()
 
+    /**
+     * Function to delegate call to use case to get the resume data.
+     */
     fun getCompanyDetail(companyDetailUrl: String) {
+        // Check for the network call update the live data in case of no network
         if (!networkUtils.isNetworkAvailable()) {
             retryOptionLiveData.value = Constants.Messages.NO_INTERNET
             return
         }
+        // Update the progress bar view
         progressLiveData.value = true
         manageActionDisposables(useCase.execute(companyDetailUrl).subscribe({
+            // Handle success case
             progressLiveData.value = false
             companyDetailLiveData.value = it
         }, { error ->
+            // Handle error case
             progressLiveData.value = false
             retryOptionLiveData.value = Constants.Messages.UNABLE_TO_FETCH_DATA
         }))

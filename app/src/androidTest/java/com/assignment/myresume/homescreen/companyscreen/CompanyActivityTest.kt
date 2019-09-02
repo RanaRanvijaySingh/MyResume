@@ -15,6 +15,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+@Suppress("DEPRECATION")
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 class CompanyActivityTest {
@@ -31,7 +32,7 @@ class CompanyActivityTest {
         intent.putExtra(Constants.IntentKeys.COMPANY_DETAIL_URL, intentCompanyUrl)
         intent.putExtra(Constants.IntentKeys.COMPANY_NAME, intentCompanyName)
         rule.launchActivity(intent)
-        Thread.sleep(3000)
+        Espresso.registerIdlingResources(rule.activity.idleResource)
     }
 
     @Test
