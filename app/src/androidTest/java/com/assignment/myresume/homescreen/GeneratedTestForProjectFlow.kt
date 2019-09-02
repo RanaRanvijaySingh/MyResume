@@ -3,6 +3,7 @@ package com.assignment.myresume.homescreen
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.Espresso.registerIdlingResources
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -29,11 +30,11 @@ class GeneratedTestForProjectFlow {
 
     @Rule
     @JvmField
-    var mActivityTestRule = ActivityTestRule(HomeActivity::class.java)
+    var rule = ActivityTestRule(HomeActivity::class.java)
 
     @Test
     fun homeActivityTest3() {
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
         val constraintLayout = onView(
             childAtPosition(
                 allOf(
@@ -47,7 +48,7 @@ class GeneratedTestForProjectFlow {
             )
         )
         constraintLayout.perform(scrollTo(), click())
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
 
         val appCompatImageButton = onView(
             allOf(
@@ -66,7 +67,7 @@ class GeneratedTestForProjectFlow {
             )
         )
         appCompatImageButton.perform(click())
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
 
         val constraintLayout2 = onView(
             childAtPosition(
@@ -81,7 +82,7 @@ class GeneratedTestForProjectFlow {
             )
         )
         constraintLayout2.perform(scrollTo(), click())
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
 
         val appCompatButton = onView(
             allOf(
@@ -100,7 +101,7 @@ class GeneratedTestForProjectFlow {
             )
         )
         appCompatButton.perform(click())
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
 
         val textView = onView(
             allOf(

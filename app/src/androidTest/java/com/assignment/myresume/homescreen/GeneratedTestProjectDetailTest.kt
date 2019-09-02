@@ -3,6 +3,7 @@ package com.assignment.myresume.homescreen
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.Espresso.registerIdlingResources
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -28,7 +29,7 @@ class GeneratedTestProjectDetailTest {
 
     @Rule
     @JvmField
-    var mActivityTestRule = ActivityTestRule(HomeActivity::class.java)
+    var rule = ActivityTestRule(HomeActivity::class.java)
 
     @Test
     fun projectScreenDetailTest() {
@@ -46,7 +47,7 @@ class GeneratedTestProjectDetailTest {
         )
         constraintLayout.perform(scrollTo(), click())
 
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
 
         val appCompatButton = onView(
             allOf(
@@ -66,7 +67,7 @@ class GeneratedTestProjectDetailTest {
         )
         appCompatButton.perform(click())
 
-        Thread.sleep(3000)
+        registerIdlingResources(rule.activity.idleResource)
 
         val textView = onView(
             allOf(
