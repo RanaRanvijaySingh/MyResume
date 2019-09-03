@@ -2,7 +2,7 @@
 This application contains all my CV details, separated out in three screens (Home, Companies, and Projects).
 
 ## Screenshot
- [](screenshot.gif)
+![](screenshot.gif)
 
 ## Architecture
 The application is designed on MVVM Pattern following the rules of clean architecture.
