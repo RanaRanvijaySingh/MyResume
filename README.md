@@ -2,12 +2,12 @@
 This application contains all my CV details, separated out in three screens (Home, Companies, and Projects).
 
 ## Screenshot
-![20190901_192929](https://github.globant.com/storage/user/2250/files/5366b200-ccef-11e9-8341-4ab6f3dd9bc3)
+ [](screenshot.gif)
 
 ## Architecture
 The application is designed on MVVM Pattern following the rules of clean architecture.
 
-![resumearch](https://github.globant.com/storage/user/2250/files/932d9980-ccef-11e9-8290-a0cb1da9d833)
+ <img width="1500" src="arch.png">
 
 
 The components of the application are as follows:
@@ -40,7 +40,7 @@ The components of the application are as follows:
  ## CI/CD Tools
  ### Fastlane
  
- <img width="547" alt="screenshot 2019-09-02 at 17 57 59" src="https://github.globant.com/storage/user/2250/files/b0c13880-cdad-11e9-8421-c2cd2a0f9f17">
+ <img width="547" src="fastlane.png">
  
  - Used fastlane to do all the post development process, like build creating and testing both Unit and UI test cases.
  - The lane for BETA deployment is also included but not using it.
@@ -55,7 +55,7 @@ The components of the application are as follows:
  - Run Ui test cases.
  
  ## Test coverage screenshot
- <img width="1605" alt="screenshot 2019-09-02 at 18 03 28" src="https://github.globant.com/storage/user/2250/files/c2a2db80-cdad-11e9-9c7f-c68895a58b3c">
+  <img width="1650" src="test.png">
  
  ## Json data hosted on Gist
    - https://gist.githubusercontent.com/RanaRanvijaySingh/129a3b70d118dfeee857476e7103009a/raw/d7bb676152454d0ac46839902e61a6f72154cc20/resume
