@@ -31,7 +31,7 @@ class HomeViewModel @Inject constructor(
             // Handle success case
             progressLiveData.value = false
             resumeUiLiveData.value = resumeUi
-        }, { error ->
+        }, {
             // Handle error case
             progressLiveData.value = false
             retryOptionLiveData.value = Constants.Messages.UNABLE_TO_FETCH_DATA

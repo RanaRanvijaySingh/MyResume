@@ -3,7 +3,7 @@ package com.assignment.myresume.homescreen
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.Espresso.registerIdlingResources
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -11,9 +11,9 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
 import com.assignment.myresume.R
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -47,7 +47,7 @@ class GeneratedTestForNavigation {
             )
         )
         constraintLayout.perform(scrollTo(), click())
-        registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
 
         val appCompatImageButton = onView(
             allOf(
@@ -66,7 +66,7 @@ class GeneratedTestForNavigation {
             )
         )
         appCompatImageButton.perform(click())
-        registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
 
         val textView = onView(
             allOf(

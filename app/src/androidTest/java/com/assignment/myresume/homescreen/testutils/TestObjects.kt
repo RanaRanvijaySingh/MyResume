@@ -14,7 +14,7 @@ class TestObjects {
 
         val resumeUi = gson.fromJson(
             JsonReaderUtil.readJsonFile(
-                this.javaClass.classLoader!!
+                this::class.java.classLoader!!
                     .getResourceAsStream("resumeui.json")
             ),
             ResumeUi::class.java
@@ -22,7 +22,7 @@ class TestObjects {
 
         val companyDetailUi = gson.fromJson(
             JsonReaderUtil.readJsonFile(
-                this.javaClass.classLoader!!
+                this::class.java.classLoader!!
                     .getResourceAsStream("globantui.json")
             ),
             CompanyDetailUi::class.java

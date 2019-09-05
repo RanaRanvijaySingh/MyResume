@@ -2,11 +2,12 @@ package com.assignment.myresume.homescreen.companyscreen
 
 import android.content.Intent
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
 import com.assignment.myresume.R
 import com.assignment.myresume.homescreen.testutils.TestObjects
 import com.assignment.myresume.homescreen.testutils.TestUtils
@@ -32,7 +33,7 @@ class CompanyActivityTest {
         intent.putExtra(Constants.IntentKeys.COMPANY_DETAIL_URL, intentCompanyUrl)
         intent.putExtra(Constants.IntentKeys.COMPANY_NAME, intentCompanyName)
         rule.launchActivity(intent)
-        Espresso.registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
     }
 
     @Test

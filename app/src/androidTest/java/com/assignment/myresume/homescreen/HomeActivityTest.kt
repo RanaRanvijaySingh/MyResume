@@ -5,7 +5,7 @@ package com.assignment.myresume.homescreen
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.Espresso.registerIdlingResources
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -36,7 +36,7 @@ class HomeActivityTest {
     fun testUserName() {
         /** We can grab the screenshots using fastlane's screengrab tool.
         Screengrab.screenshot("testCompanyName") **/
-        registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
         onView(withId(R.id.tvName))
             .check(matches(withText("Rana Ranvijay Singh")))
     }
@@ -182,14 +182,14 @@ class HomeActivityTest {
 
     @Test
     fun test_ScrollToEnd() {
-        registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
         onView(withId(R.id.tvName))
             .check(matches(withText("Rana Ranvijay Singh")))
     }
 
     @Test
     fun testCompaniesNames() {
-        registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
         Espresso.onView(withId(R.id.svParent)).perform(ViewActions.swipeUp())
         Espresso.onView(withId(R.id.svParent)).perform(ViewActions.swipeUp())
         /** We can grab the screenshots using fastlane's screengrab tool.
@@ -211,7 +211,7 @@ class HomeActivityTest {
 
     @Test
     fun testWeboniseLabTap() {
-        registerIdlingResources(rule.activity.idleResource)
+        IdlingRegistry.getInstance().register(rule.activity.idleResource)
         Espresso.onView(withId(R.id.svParent)).perform(ViewActions.swipeUp())
         Espresso.onView(withId(R.id.svParent)).perform(ViewActions.swipeUp())
         val constraintLayout = onView(

@@ -15,7 +15,7 @@ class TestObjects {
         val gson = GsonBuilder().create()
 
         val resume = gson.fromJson(
-            JsonReaderUtil.readJsonFile(this.javaClass.classLoader!!
+            JsonReaderUtil.readJsonFile(this::class.java.classLoader!!
                 .getResourceAsStream("resume.json")),
             Resume::class.java
         )
@@ -27,13 +27,13 @@ class TestObjects {
         )
 
         val companyDetail = gson.fromJson(
-            JsonReaderUtil.readJsonFile(this.javaClass.classLoader!!
+            JsonReaderUtil.readJsonFile(this::class.java.classLoader!!
                 .getResourceAsStream("globant.json")),
             CompanyDetail::class.java
         )
 
         val companyDetailUi = gson.fromJson(
-            JsonReaderUtil.readJsonFile(this.javaClass.classLoader!!
+            JsonReaderUtil.readJsonFile(this::class.java.classLoader!!
                 .getResourceAsStream("globantui.json")),
             CompanyDetailUi::class.java
         )

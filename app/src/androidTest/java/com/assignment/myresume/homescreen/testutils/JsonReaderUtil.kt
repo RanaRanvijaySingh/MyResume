@@ -11,7 +11,7 @@ class JsonReaderUtil {
 
     companion object {
 
-        open fun readJsonFile(stream: InputStream): String {
+        fun readJsonFile(stream: InputStream): String {
             val bufferReader = BufferedReader(InputStreamReader(stream))
             var content = bufferReader.readLine()
             val stringBuilder = StringBuilder()

@@ -69,6 +69,7 @@ dependencies {
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
     testImplementation "org.robolectric:robolectric:$roboelectricVersion"
     implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"

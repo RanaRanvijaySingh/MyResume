@@ -31,7 +31,7 @@ class CompanyViewModel @Inject constructor(
             // Handle success case
             progressLiveData.value = false
             companyDetailLiveData.value = it
-        }, { error ->
+        }, {
             // Handle error case
             progressLiveData.value = false
             retryOptionLiveData.value = Constants.Messages.UNABLE_TO_FETCH_DATA
